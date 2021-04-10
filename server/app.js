@@ -17,6 +17,10 @@ const app = express();
 //             console.log(body);
 //         });
 
+
+
+
+
 const port = 5000;
 app.use(express.json());
 app.use(express.static('static'));
