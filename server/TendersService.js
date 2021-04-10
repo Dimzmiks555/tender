@@ -8,7 +8,6 @@ class TendersService {
 
     async getAll() {
         const tenders = await Tenders.find();
-        console.log(tenders);
         return tenders;
     }
     // async getOne(id) {
