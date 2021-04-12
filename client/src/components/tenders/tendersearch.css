@@ -6,6 +6,7 @@
     font-weight: medium;
     margin-bottom: 10px;
     align-items: center;
+    font-size: 14px;
 }
 .tenderlist_item .title {
     border-right: 1px solid #ccc;

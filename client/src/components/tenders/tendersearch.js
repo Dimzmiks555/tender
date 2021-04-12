@@ -21,8 +21,6 @@ export default class TenderSearch extends React.Component {
               data: result.result.data
             });
           },
-          // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-          // чтобы не перехватывать исключения из ошибок в самих компонентах.
           (error) => {
             this.setState({
               isLoaded: true,
@@ -47,6 +45,9 @@ export default class TenderSearch extends React.Component {
                 </div>
                 <div className="close_date">
                   {tender.close_date}
+                </div>
+                <div className="company_name">
+                  {tender.company_name}
                 </div>
               </div>
             ))}
