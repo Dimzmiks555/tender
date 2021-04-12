@@ -1,0 +1,14 @@
+.header {
+    padding-top: 20px;
+    min-width: 200px;
+    margin-right: 40px;
+
+}
+.header a {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: 20px;
+}

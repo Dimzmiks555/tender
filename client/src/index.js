@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// Components
 import Header from './components/header/header.js';
-import Tenders from './components/tenders/tenders.js';
+import Page from "./components/page/page.js";
+
+// CSS
+import './index.css';
 
 
 
 ReactDOM.render(
-    <Router>
-        <Header />
-        <Switch>
-            <Route exact path="/" component={Header} />
-            <Route path="/tenders" component={Tenders} />
-        </Switch>
-    </Router>,
+    <div className="wrapper">
+        <Router>
+            <Header/>
+            <Page />
+        </Router>
+    </div>
+    ,
     document.getElementById('root')
   );
