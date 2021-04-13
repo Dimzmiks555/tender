@@ -1,12 +1,16 @@
 @font-face {
-	font-family: 'Segoe-UI'; 
-	src: url(segoe.ttf); 
+	font-family: 'Raleway'; 
+	src: url(Rubik-VariableFont_wght.ttf); 
+}
+*{
+    box-sizing: border-box;
 }
 body {
+    background: #fcfcfc;
     color: #111;
     padding: 0;
     margin: 0;
-    font-family: 'Segoe-UI';
+    font-family: 'Raleway';
 }
 a {
     text-decoration: none;

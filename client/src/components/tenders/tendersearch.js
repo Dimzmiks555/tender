@@ -1,6 +1,6 @@
 import React from 'react';
-import './tendersearch.css'
- 
+import './tenders.css'
+import {Link, BrowserRouter}  from 'react-router-dom';
 export default class TenderSearch extends React.Component {
     constructor(props) {
       super(props);
@@ -41,13 +41,21 @@ export default class TenderSearch extends React.Component {
             {data.map(tender => (
               <div className="tenderlist_item" key={tender.id}>
                 <div className="title">
-                  {tender.title}
+                  <Link to={`/tenderoverview/${tender.company_id}/${tender.id}`}>{tender.title}</Link>
                 </div>
-                <div className="close_date">
-                  {tender.close_date}
-                </div>
-                <div className="company_name">
-                  {tender.company_name}
+                <div className="info">
+                  <div className="id">
+                    ID {tender.id}
+                  </div>
+                  <div className="close_date">
+                    {tender.close_date}
+                  </div>
+                  <div className="type_name">
+                    {tender.type_name}
+                  </div>
+                  <div className="company_name">
+                    {tender.company_name}
+                  </div>
                 </div>
               </div>
             ))}

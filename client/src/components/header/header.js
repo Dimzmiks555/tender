@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, BrowserRouter}  from 'react-router-dom';
+import {NavLink, BrowserRouter}  from 'react-router-dom';
 import "./header.css";
  
 export default class Header extends React.Component{
@@ -7,10 +7,18 @@ export default class Header extends React.Component{
     
 
     render(){
-        return <div className="header">
-                <Link to="/">Главная</Link> 
-                <Link to="/tendersearch">Поиск тендеров</Link>
-                <Link to="/mytenders">Мои тендеры</Link>
-              </div>;
+        return (
+                <div className="header">
+                    <div className="logo">
+                        <h1>СТРОИТЕЛЬ</h1>
+                        <h3>Тендерная система</h3>
+                    </div>
+                    <div className="navbar">
+                        <NavLink exact to="/" activeClassName="active">Главная</NavLink> 
+                        <NavLink to="/tendersearch" activeClassName="active">Поиск тендеров</NavLink>
+                        <NavLink to="/mytenders" activeClassName="active">Мои тендеры</NavLink>
+                    </div>
+                </div>
+              );
     }
 }
