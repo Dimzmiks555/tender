@@ -10,7 +10,8 @@ export default class TenderOverview extends React.Component{
         this.state = {
           error: null,
           isLoaded: false,
-          data: []
+          dataInfo: [],
+          dataItem: []
         };
       }
     componentDidMount() {
@@ -38,7 +39,7 @@ export default class TenderOverview extends React.Component{
         
     }
     getData() {
-        const {error, isLoaded, dataInfo } = this.state;
+        const {error, isLoaded, dataInfo, dataItem} = this.state;
         if (error) {
           return <div>Ошибка: {error.message}</div>;
         } else if (!isLoaded) {
@@ -46,8 +47,6 @@ export default class TenderOverview extends React.Component{
         } else {
           return (
             <div className="tenderoverview">
-                <div>
-                </div>
                 <div className="info">
                     <div>
                         <h1>Тендер  {this.props.match.params.id}</h1>
@@ -59,11 +58,15 @@ export default class TenderOverview extends React.Component{
                 <div className="type_name">
                     {dataInfo.type_name}
                 </div>
+                {/* <div>
+                    {dataItem.map(item => (
+                        <div>{item.name}</div>
+                        )
+                    )}
+                </div> */}
                 <div className="title">
                     {dataInfo.title}
                 </div>
-                
-                
                 <div className="winners_list">
                     {dataInfo.winners_list}
                 </div>
@@ -72,6 +75,8 @@ export default class TenderOverview extends React.Component{
                 </div>
                 <div className="face_phone">
                     {dataInfo.face_phone}
+                </div>
+                <div>
                 </div>
                 <div className="anno" dangerouslySetInnerHTML={{ __html: dataInfo.anno }}>
                 </div>
