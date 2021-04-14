@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Main from '../main/main.js';
 import TenderSearch from '../tenders/tendersearch.js';
-import "./tenders.css";
- 
+import "./tenders.css"; 
+
 export default class TenderOverview extends React.Component{
     constructor(props) {
         super(props);
@@ -21,11 +21,18 @@ export default class TenderOverview extends React.Component{
         ])
         .then(
         (result) => {
-            this.setState({
-            isLoaded: true,
-            dataInfo: result[0].result.data,
-            dataItem: result[1].result.data
-            });
+            if (!result[0].result) {
+                this.setState({
+                    isLoaded: true,
+                    error: result[0].error.message
+                });
+            } else {
+                this.setState({
+                    isLoaded: true,
+                    dataInfo: result[0].result.data,
+                    dataItem: result[1].result.data
+                });
+            }    
         },
         (error) => {
             this.setState({
@@ -41,9 +48,9 @@ export default class TenderOverview extends React.Component{
     getData() {
         const {error, isLoaded, dataInfo, dataItem} = this.state;
         if (error) {
-          return <div>Ошибка: {error.message}</div>;
+          return <h2>Ошибка: {error}</h2>;
         } else if (!isLoaded) {
-          return <div>Загрузка...</div>;
+          return <h2>Загрузка...</h2>;
         } else {
           return (
             <div className="tenderoverview">
@@ -85,10 +92,15 @@ export default class TenderOverview extends React.Component{
         }
       }
     render(){
-        return (<div className="tender_overview">
-                {this.getData()}
-      </div>)
-            
-        
+        return (
+            <div className="tender_overview">
+                <div>
+                    {this.getData()}
+                </div>
+                <div className="sidebar">
+                    <h2>Главная</h2>
+                </div>
+            </div>
+        )
     }
 }

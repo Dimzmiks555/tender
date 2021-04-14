@@ -14,6 +14,7 @@ class TendersController {
     async getAll(req, res) {
         try {
             const tenders = await TendersService.getAll();
+            console.log(tenders);
             return res.json(tenders);
         } catch (e) {
             res.status(500).json(e)

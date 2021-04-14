@@ -16,11 +16,14 @@ export default class TenderSearch extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result);
-            // this.setState({
-            //   isLoaded: true,
-            //   data: result.result.data
-            // });
+            try {
+              this.setState({
+                isLoaded: true,
+                data: result.result.data
+              });
+            } catch (error) {
+              <h2>Нет доступа к API</h2>
+            }
           },
           (error) => {
             this.setState({
@@ -32,37 +35,102 @@ export default class TenderSearch extends React.Component {
     }
     getData() {
       const {error, isLoaded, data } = this.state;
+
+      function calcStage (title) {
+        if (title.includes('2-й этап')) {
+          return <h2>2</h2>
+        } 
+        else if (title.includes('3-й этап')) {
+          return <h2>3</h2>
+        }
+        else if (title.includes('4-й этап')) {
+          return <h2>4</h2>
+        }
+        else if (title.includes('5-й этап')) {
+          return <h2>5</h2>
+        }
+        else if (title.includes('6-й этап')) {
+          return <h2>6</h2>
+        }
+        else {
+          return <h2>1</h2>
+        }
+      }
+      
+      function calcType(type) {
+        if (type == 1) {
+          return {
+            background: '#fcfcfc'
+          }
+        }
+        else if (type == 2) {
+          return {
+            background: 'gray'
+          }
+        }
+        else if (type == 3) {
+          return {
+            background: '#ffdb58'
+          }
+        }
+        else if (type == 4) {
+          return {
+            background: 'grey',
+            color: 'white'
+          }
+        }
+        else {
+          return {
+            background: 'black'
+          }
+        }
+      }
+
       if (error) {
         return <div>Ошибка: {error.message}</div>;
       } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
-      } else {
+        return <h2>Загрузка...</h2>;
+      } else if (Array.isArray(data)){
         return (
           <div className="tendersearch">
-            {data.map(tender => (
-              <div className="tenderlist_item">
-                <div className="title">
-                  <Link to={`/tenderoverview/${tender.company_id}/${tender.id}`}>{tender.title}</Link>
+            { 
+              data.map(tender => (
+              <div className="tenderlist_item" key={tender.id} style={calcType(tender.type_id)}>
+                <div>
+                  <div className="title">
+                    <Link to={`/tenderoverview/${tender.company_id}/${tender.id}`}>{tender.title}</Link>
+                  </div>
+                  <div className="info">
+                    <div className="id">
+                      ID {tender.id}
+                    </div>
+                    <div className="close_date">
+                      {tender.close_date}
+                    </div>
+                    <div className="type_name">
+                      {tender.type_name}
+                    </div>
+                    <div className="company_name">
+                      {tender.company_name}
+                    </div>
+                  </div>
                 </div>
-                <div className="info">
-                  <div className="id">
-                    ID {tender.id}
-                  </div>
-                  <div className="close_date">
-                    {tender.close_date}
-                  </div>
-                  <div className="type_name">
-                    {tender.type_name}
-                  </div>
-                  <div className="company_name">
-                    {tender.company_name}
-                  </div>
+                <div className="stage">
+                    {
+                      calcStage(tender.title)
+                    }
                 </div>
               </div>
-            ))}
+            ))
+            }
           </div>
         );
+      } else {
+        return (
+            <h2>Нет доступа к API.....</h2>
+          )
       }
+
     }
     render() {
       return (
