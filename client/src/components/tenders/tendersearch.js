@@ -60,12 +60,12 @@ export default class TenderSearch extends React.Component {
       function calcType(type) {
         if (type == 1) {
           return {
-            background: '#fcfcfc'
+            background: '#c33'
           }
         }
         else if (type == 2) {
           return {
-            background: 'gray'
+            background: '#55d'
           }
         }
         else if (type == 3) {
@@ -75,8 +75,7 @@ export default class TenderSearch extends React.Component {
         }
         else if (type == 4) {
           return {
-            background: 'grey',
-            color: 'white'
+            background: 'gray'
           }
         }
         else {
@@ -95,7 +94,7 @@ export default class TenderSearch extends React.Component {
           <div className="tendersearch">
             { 
               data.map(tender => (
-              <div className="tenderlist_item" key={tender.id} style={calcType(tender.type_id)}>
+              <div className="tenderlist_item" key={tender.id}>
                 <div>
                   <div className="title">
                     <Link to={`/tenderoverview/${tender.company_id}/${tender.id}`}>{tender.title}</Link>
@@ -115,7 +114,7 @@ export default class TenderSearch extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="stage">
+                <div className="stage" style={calcType(tender.type_id)}>
                     {
                       calcStage(tender.title)
                     }

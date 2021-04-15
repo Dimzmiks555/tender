@@ -8,10 +8,7 @@ export default class Sidebar extends React.Component {
     render(){
         return (
             <div className="sidebar">
-                <h2>Главная</h2>
-                <p>Match: {console.log(TenderOverview)}</p>
-                <p>Location {this.props.location}</p>
-                <NavLink exact to="/:id" activeClassName="active">Информация</NavLink> 
+                <NavLink exact to="./" activeClassName="active">Информация</NavLink> 
                 <NavLink to="/files" activeClassName="active">Файлы</NavLink> 
                 <NavLink to="/" activeClassName="active">Информация</NavLink> 
                 <NavLink to="/" activeClassName="active">Информация</NavLink> 

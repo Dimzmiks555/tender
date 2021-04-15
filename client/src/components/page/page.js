@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Main from '../main/main.js';
 import TenderSearch from '../tenders/tendersearch.js';
 import TenderOverview from '../tenders/tenderoverview.js';
+import TenderOverviewFiles from '../tenders/tenderoverviewfiles.js';
 import MyTenders from '../mytenders/mytenders.js'
 import "./page.css";
  
@@ -14,6 +15,7 @@ export default class Page extends React.Component{
                 <Route path="/tendersearch" component={TenderSearch} />
                 <Route path="/tenderoverview/:company_id/:id" component={TenderOverview} />
                 <Route path="/mytenders" component={MyTenders} />
+                <Route path="/tenderoverview/:company_id/:id/files" component={TenderOverviewFiles} />
             </Switch>
         </div>)
             

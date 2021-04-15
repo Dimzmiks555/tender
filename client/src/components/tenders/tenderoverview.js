@@ -97,9 +97,6 @@ export default class TenderOverview extends React.Component{
                 <div>
                     {this.getData()}
                 </div>
-                <div className="sidebar">
-                    <h2>Главная</h2>
-                </div>
             </div>
         )
     }
