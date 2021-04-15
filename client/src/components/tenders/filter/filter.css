@@ -1,0 +1,17 @@
+.tendersearch_filter{
+    display: block;
+    margin-top: 40px;
+    min-height: 200px;
+    background: #fcfcfc;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 10px 40px;
+}
+.tendersearch_filter select{
+    outline: none;
+    display: block;
+    min-height: 50px;
+    background: #fcfcfc;
+    border-radius: 10px;
+    padding: 10px;
+}

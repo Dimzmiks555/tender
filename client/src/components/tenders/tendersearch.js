@@ -1,6 +1,12 @@
 import React from 'react';
 import './tenders.css'
 import {Link, BrowserRouter}  from 'react-router-dom';
+import Filter from './filter/filter.js'
+
+
+    
+
+
 export default class TenderSearch extends React.Component {
     constructor(props) {
       super(props);
@@ -33,6 +39,7 @@ export default class TenderSearch extends React.Component {
           }
         )
     }
+    
     getData() {
       const {error, isLoaded, data } = this.state;
 
@@ -57,6 +64,34 @@ export default class TenderSearch extends React.Component {
         }
       }
       
+      function calcTypeString(type) {
+        if (type == 1) {
+          return {
+            color: '#c33'
+          }
+        }
+        else if (type == 2) {
+          return {
+            color: '#55d'
+          }
+        }
+        else if (type == 3) {
+          return {
+            color: '#ffdb58'
+          }
+        }
+        else if (type == 4) {
+          return {
+            color: 'gray'
+          }
+        }
+        else {
+          return {
+            color: 'black'
+          }
+        }
+      } 
+
       function calcType(type) {
         if (type == 1) {
           return {
@@ -90,8 +125,11 @@ export default class TenderSearch extends React.Component {
       } else if (!isLoaded) {
         return <h2>Загрузка...</h2>;
       } else if (Array.isArray(data)){
+                
         return (
           <div className="tendersearch">
+            <Filter />
+            <h1>Результат</h1>
             { 
               data.map(tender => (
               <div className="tenderlist_item" key={tender.id}>
@@ -106,7 +144,7 @@ export default class TenderSearch extends React.Component {
                     <div className="close_date">
                       {tender.close_date}
                     </div>
-                    <div className="type_name">
+                    <div className="type_name" style={calcTypeString(tender.type_id)}>
                       {tender.type_name}
                     </div>
                     <div className="company_name">

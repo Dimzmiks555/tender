@@ -1,3 +1,7 @@
+.tendersearch h1{
+    margin-bottom: 40px;
+}
+
 .tenderlist_item {
     background: #fcfcfc;
     padding: 20px 20px;
@@ -47,7 +51,6 @@
     margin-right: 10px;
 }
 .tenderlist_item .company_name {
-    color: #c33;
     text-align: right;
 }
 .tenderlist_item .type_name {
