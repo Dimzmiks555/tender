@@ -3,12 +3,11 @@
 }
 
 .tenderlist_item {
-    box-shadow: #ccc 0px 10px 20px;
     background: #fcfcfc;
     padding: 20px 20px;
     border-radius: 10px;
     font-weight: medium;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
@@ -80,9 +79,6 @@
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 10px;
-}
-.tenderoverview .title::first-letter{
-    text-transform: uppercase;
 }
 .tenderoverview .type_name{
     font-size: 20px;
