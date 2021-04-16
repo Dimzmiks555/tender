@@ -1,18 +1,22 @@
 import React from 'react';
 import {NavLink, BrowserRouter}  from 'react-router-dom';
-import TenderOverview from '../tenders/tenderoverview.js'
+import TenderOverviewStore from '../../stores/tenderoverviewStore.js'
+import SidebarStore from '../../stores/sidebarStore.js'
+import { observer } from 'mobx-react-lite';
 import './sidebar.css'
 
 
-export default class Sidebar extends React.Component {
-    render(){
-        return (
-            <div className="sidebar">
-                <NavLink exact to="./" activeClassName="active">Информация</NavLink> 
-                <NavLink to="/files" activeClassName="active">Файлы</NavLink> 
-                <NavLink to="/" activeClassName="active">Информация</NavLink> 
-                <NavLink to="/" activeClassName="active">Информация</NavLink> 
-            </div>
-        )
-    }
-}
+
+const Sidebar = observer( () => {
+    return (
+        <div className="sidebar" style={{display: SidebarStore.props.display}}>
+            <h2></h2>
+            <NavLink exact to="./" activeClassName="active">Информация</NavLink> 
+            <NavLink to={`tenderoverview/files/${TenderOverviewStore.props.id}`} activeClassName="active">Файлы</NavLink> 
+            <NavLink to="/" activeClassName="active">Информация</NavLink> 
+            <NavLink to="/" activeClassName="active">Информация</NavLink> 
+        </div>
+    )
+ } 
+)
+export default Sidebar;

@@ -3,7 +3,6 @@ import './tenders.css'
 import {Link, BrowserRouter}  from 'react-router-dom';
 import Filter from './filter/filter.js'
 
-
     
 
 
