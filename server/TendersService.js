@@ -1,11 +1,25 @@
 import Tenders from "./Tenders.js";
+import fs from 'fs'
+import XMLParser from 'xml-js';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 class TendersService {
     // async create(tenders) {
     //     const createdTenders = await Tenders.create(...post);
     //     return createdTenders;
     // }
-
+    async create(file) {
+        let filePath = fs.createReadStream(file.path,'utf8');
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log(data);
+            }
+        })
+    }
     async getAll() {
         const tenders = await Tenders.find();
         return tenders;

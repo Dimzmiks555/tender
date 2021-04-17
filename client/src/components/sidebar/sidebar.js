@@ -11,10 +11,9 @@ const Sidebar = observer( () => {
     return (
         <div className="sidebar" style={{display: SidebarStore.props.display}}>
             <h2></h2>
-            <NavLink exact to="./" activeClassName="active">Информация</NavLink> 
-            <NavLink to={`tenderoverview/files/${TenderOverviewStore.props.id}`} activeClassName="active">Файлы</NavLink> 
-            <NavLink to="/" activeClassName="active">Информация</NavLink> 
-            <NavLink to="/" activeClassName="active">Информация</NavLink> 
+            <NavLink exact to={`/tenderoverview/${TenderOverviewStore.props.company_id}/${TenderOverviewStore.props.id}`} activeClassName="active">Информация</NavLink> 
+            <NavLink to={`/positions/${TenderOverviewStore.props.company_id}/${TenderOverviewStore.props.id}`} activeClassName="active">Позиции</NavLink> 
+            <NavLink to={`/docs/${TenderOverviewStore.props.company_id}/${TenderOverviewStore.props.id}`} activeClassName="active">Документы</NavLink> 
         </div>
     )
  } 

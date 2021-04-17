@@ -2,19 +2,19 @@ import Tenders from "./Tenders.js";
 import TendersService from "./TendersService.js";
 
 class TendersController {
-    // async create(req, res) {
-    //     try {
-    //         const post = await PostService.create(req.body, req.files.picture)
-    //         res.json(post)
-    //     } catch (e) {
-    //         res.status(500).json(e)
-    //     }
-    // }
-
+    async create(req, res) {
+        try {
+            console.log(req.file);
+            const tender = await TendersService.create(req.file);
+            res.send("file saved on server");
+        } catch (e) {
+            // console.log(e);
+            res.status(500).json(e)
+        }
+    }
     async getAll(req, res) {
         try {
             const tenders = await TendersService.getAll();
-            console.log(tenders);
             return res.json(tenders);
         } catch (e) {
             res.status(500).json(e)

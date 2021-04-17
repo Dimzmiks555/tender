@@ -1,15 +1,24 @@
 import React from 'react';
 export default class MyTenders extends React.Component {
 
+    constructor(props){
+      super(props);
+      this.state = {
+        error: null,
+        isLoaded: false,
+        data: []
+      }
+    }
+
     componentDidMount() {
-        fetch("http://www.tender.pro/api/_info.tenderlist_by_set.json?_key=1732ede4de680a0c93d81f01d7bac7d1&set_type_id=2&set_id=7964&max_rows=100&open_only=t")
+        fetch("http://127.0.0.1:5000/api/tenders")
           .then(res => res.json())
           .then(
             (result) => {
               try {
                 this.setState({
                   isLoaded: true,
-                  data: result.result.data
+                  data: result
                 });
               } catch (error) {
                 <h2>Нет доступа к API</h2>
@@ -23,15 +32,50 @@ export default class MyTenders extends React.Component {
             }
           )
       }
-    
-    getData(){
-        return <h1>hh</h1>
+    async _handleSubmit(e) {
+      e.preventDefault();
+      const data = new FormData();
+      data.append('file', this.uploadInput.files[0]);
+      data.append('filename', 'this.fileName.value');
+      console.log(data.entries());
+      await fetch('http://127.0.0.1:5000/api/upload', {
+        method: 'POST',
+        body: data
+      }).then(res => {
+        console.log(res);
+      }).catch(error => {
+        console.log(error);
+      })
+
     }
+    getData(){
+        const {isLoaded, data} = this.state;
+        console.log(data);
+        if (!isLoaded) {
+          return <h2>Загрузка...</h2>
+        } else {
+            return (
+              <div>
+                {
+                  data.map(item => (
+                    <div>
+                      {item.id}
+                    </div>
+                  ))
+                }
+              </div>
+            )
+          }
+        }
 
     render(){
         return(
             <div>
                 <h1>Мои тендеры</h1>
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                  <input name="file" type="file" ref={(ref) => { this.uploadInput = ref; }}></input>
+                  <button type="submit" onClick={(e)=>this._handleSubmit(e)}>Отправить</button>
+                </form>
                 {this.getData()}
             </div>
         )

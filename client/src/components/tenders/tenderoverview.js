@@ -1,7 +1,5 @@
 import React from 'react';
 import {observer} from 'mobx-react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Main from '../page/main/main.js';
 import TenderoverviewStore from '../../stores/tenderoverviewStore.js';
 import SidebarStore from '../../stores/sidebarStore.js'
 import "./tenders.css"; 
@@ -13,6 +11,7 @@ import "./tenders.css";
 
 const TenderOverview = observer(
      class TenderOverview extends React.Component{
+
         constructor(props) {
             super(props);
             this.state = {
@@ -26,22 +25,19 @@ const TenderOverview = observer(
         componentDidMount() {
             TenderoverviewStore.GetIds(this.props.match.params.company_id,this.props.match.params.id);
             SidebarStore.showSideBar();
-            Promise.all([
-                fetch(`http://www.tender.pro/api/_tender.info.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=${this.props.match.params.company_id}&id=${this.props.match.params.id}`).then(r => r.json()),
-                fetch(`http://www.tender.pro/api/_tender.item.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=${this.props.match.params.company_id}&id=${this.props.match.params.id}`).then(r => r.json()),
-            ])
+                
+            fetch(`http://www.tender.pro/api/_tender.info.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=${this.props.match.params.company_id}&id=${this.props.match.params.id}`).then(r => r.json())
             .then(
             (result) => {
-                if (!result[0].result) {
+                if (!result.result) {
                     this.setState({
                         isLoaded: true,
-                        error: result[0].error.message
+                        error: result?.error.message
                     });
                 } else {
                     this.setState({
                         isLoaded: true,
-                        dataInfo: result[0].result.data,
-                        dataItem: result[1].result.data
+                        dataInfo: result?.result.data
                     });
                 }    
             },
@@ -69,7 +65,7 @@ const TenderOverview = observer(
             } else {
             return (
                 <div className="tenderoverview">
-                    <div className="info">
+                    <div className="info" id="info">
                         <div>
                             <h1>Тендер  {tender_id}</h1>
                         </div>

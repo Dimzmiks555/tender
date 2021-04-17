@@ -134,7 +134,7 @@ export default class TenderSearch extends React.Component {
               <div className="tenderlist_item" key={tender.id}>
                 <div>
                   <div className="title">
-                    <Link to={`/tenderoverview/${tender.company_id}/${tender.id}`}>{tender.title}</Link>
+                    <Link to={`/tenderoverview/${tender.company_id}/${tender.id}/#info`}>{tender.title}</Link>
                   </div>
                   <div className="info">
                     <div className="id">

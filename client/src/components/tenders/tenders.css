@@ -3,6 +3,7 @@
 }
 
 .tenderlist_item {
+    box-shadow: #ccc 0px 10px 20px;
     background: #fcfcfc;
     padding: 20px 20px;
     border-radius: 10px;
@@ -86,5 +87,45 @@
 }
 .tenderoverview .close_date{
     font-size: 20px;
+    font-weight: bold;
+}
+.tenderpositions_item{
+    align-items: center;
+    display: flex;
+    box-shadow: #ccc 0px 10px 20px;
+    background: #fefefe;
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.tenderpositions_header{
+    display: flex;
+    align-items: center;
+}
+.tenderpositions_info{
+    flex-grow: 1;
+}
+.tenderpositions_number {
+    font-size: 14px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fcfcfc;
+    background: #c33;
+    margin-right: 20px;
+    min-width: 25px;
+    height: 25px;
+}
+.tenderpositions_name {
+    width: 50%;
+    margin-right: 20px;
+}
+.tenderpositions_amount{
+    font-weight: bold;
+    width: 10%;
+}
+.tenderpositions_description{
+    margin-top: 10px;
     font-weight: bold;
 }
