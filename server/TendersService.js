@@ -1,8 +1,10 @@
 import Tenders from "./Tenders.js";
 import fs from 'fs'
-import XMLParser from 'xml-js';
+import XMLParser from 'xml2js';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { DOMParser }  from 'xmldom';
+import fetch from 'node-fetch';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 class TendersService {
@@ -11,12 +13,25 @@ class TendersService {
     //     return createdTenders;
     // }
     async create(file) {
-        let filePath = fs.createReadStream(file.path,'utf8');
+        let filePath = file.path;
+        let fileName = file.filename;
+        let id = parseInt(fileName.match(/\d+/))
+        console.log(filePath, file);
         fs.readFile(filePath, (err, data) => {
             if (err) {
-                console.log(err)
+                console.log("err")
             } else {
-                console.log(data);
+                let file = data.toString();
+                var xmlStringSerialized = new DOMParser().parseFromString(file, "text/xml");
+                XMLParser.parseString(xmlStringSerialized, (err, result) => {
+                    let positions = result.tenderposition_import.tenderpositions[0].tenderposition;
+                    
+                    Tenders.create({
+                        id: id,
+                        pos: positions
+                    });
+                });
+                
             }
         })
     }

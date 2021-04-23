@@ -4,7 +4,7 @@ import TendersService from "./TendersService.js";
 class TendersController {
     async create(req, res) {
         try {
-            console.log(req.file);
+            console.log(req.filename);
             const tender = await TendersService.create(req.file);
             res.send("file saved on server");
         } catch (e) {

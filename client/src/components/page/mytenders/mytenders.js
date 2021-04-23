@@ -32,23 +32,7 @@ export default class MyTenders extends React.Component {
             }
           )
       }
-    async _handleSubmit(e) {
-      e.preventDefault();
-      const data = new FormData();
-      data.append('file', this.uploadInput.files[0]);
-      data.append('filename', 'this.fileName.value');
-      console.log(data.entries());
-      await fetch('http://127.0.0.1:5000/api/upload', {
-        method: 'POST',
-        body: data
-      }).then(res => {
-        console.log(res);
-      }).catch(error => {
-        console.log(error);
-      })
-
-    }
-    getData(){
+      getData(){
         const {isLoaded, data} = this.state;
         console.log(data);
         if (!isLoaded) {
@@ -67,12 +51,30 @@ export default class MyTenders extends React.Component {
             )
           }
         }
+    async _handleSubmit(e) {
+      e.preventDefault();
+      const data = new FormData();
+      const id = this.companyInput;
+      data.append('file', this.uploadInput.files[0]);
+      data.append('filename', 'this.fileName.value');
+      console.log(data.entries());
+      await fetch('http://127.0.0.1:5000/api/upload', {
+        method: 'POST',
+        body: data
+      }).then()
+      .catch(error => {
+        console.log(error);
+      })
+
+    }
+    
 
     render(){
         return(
             <div>
                 <h1>Мои тендеры</h1>
                 <form onSubmit={(e)=>this._handleSubmit(e)}>
+                  <input name="company_id" ref={(ref) => { this.companyInput = ref; }}></input>
                   <input name="file" type="file" ref={(ref) => { this.uploadInput = ref; }}></input>
                   <button type="submit" onClick={(e)=>this._handleSubmit(e)}>Отправить</button>
                 </form>
