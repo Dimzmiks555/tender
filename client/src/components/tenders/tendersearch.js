@@ -1,7 +1,8 @@
 import React from 'react';
-import './tenders.css'
+import './tenders.css';
 import {Link, BrowserRouter}  from 'react-router-dom';
 import Filter from './filter/filter.js'
+import Loading from '../loading/loading';
 
     
 
@@ -94,27 +95,32 @@ export default class TenderSearch extends React.Component {
       function calcType(type) {
         if (type == 1) {
           return {
-            background: '#c33'
+            background: '#c33',
+            boxShadow: '#c33 0 0 7px'
           }
         }
         else if (type == 2) {
           return {
-            background: '#55d'
+            background: '#55d',
+            boxShadow: '#55d 0 0 7px'
           }
         }
         else if (type == 3) {
           return {
-            background: '#ffdb58'
+            background: '#ffdb58',
+            boxShadow: '#ffdb58 0 0 7px'
           }
         }
         else if (type == 4) {
           return {
-            background: 'gray'
+            background: 'gray',
+            boxShadow: 'gray 0 0 7px'
           }
         }
         else {
           return {
-            background: 'black'
+            background: 'black',
+            boxShadow: 'black 0 0 7px'
           }
         }
       }
@@ -122,7 +128,7 @@ export default class TenderSearch extends React.Component {
       if (error) {
         return <div>Ошибка: {error.message}</div>;
       } else if (!isLoaded) {
-        return <h2>Загрузка...</h2>;
+        return <Loading />
       } else if (Array.isArray(data)){
                 
         return (

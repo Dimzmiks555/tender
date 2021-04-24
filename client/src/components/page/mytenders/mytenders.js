@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Loading from '../../loading/loading';
 import './mytenders.css';
 
 export default class MyTenders extends React.Component {
@@ -62,8 +63,9 @@ export default class MyTenders extends React.Component {
         const {isLoaded, data} = this.state;
         console.log(data);
         if (!isLoaded) {
-          return <h2>Загрузка...</h2>
+          return <Loading />
         } else {
+            data.reverse();
             return (
               <div>
                 {

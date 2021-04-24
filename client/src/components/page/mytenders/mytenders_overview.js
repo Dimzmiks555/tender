@@ -9,10 +9,52 @@ export default class MyTenders_overview extends React.Component {
         this.state = {
           error: null,
           isLoaded: false,
-          data: {}
+          data: {},
+          buy_price: '0',
+          percent: null,
+          analog_name: ''
         }
+
+        this.handleChangeBP = this.handleChangeBP.bind(this);
+        this.handleChangeP = this.handleChangeP.bind(this);
+        this.handleChangeAN = this.handleChangeAN.bind(this);
       }
-  
+
+    async handleChangeBP(event) {
+        this.setState({buy_price: event.target.buy_price});
+        let data = this.buy_price;
+        console.log(data);
+        await fetch('http://127.0.0.1:5000/api/tenderedit', {
+            method: 'POST',
+            body: data
+        }).then()
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    async handleChangeP(event) {
+        this.setState({percent: event.target.percent});
+        let data = this.buy_price;
+        await fetch('http://127.0.0.1:5000/api/tenderedit', {
+            method: 'POST',
+            body: data
+        }).then()
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    async handleChangeAN(event) {
+        this.setState({analog_name: event.target.analog_name});
+        let data = this.buy_price;
+        await fetch('http://127.0.0.1:5000/api/tenderedit', {
+            method: 'POST',
+            body: data
+        }).then()
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     componentDidMount() {
         fetch(`http://127.0.0.1:5000/api/tenders/${this.props.match.params.id}`)
         .then(res => res.json())
@@ -84,11 +126,11 @@ export default class MyTenders_overview extends React.Component {
                                 <div className="tenderpositions_unit_name">Ед. изм</div>
                                 <div className="tenderpositions_buy-summ">Цена</div>
                                 <div className="tenderpositions_buy-summ">Сумма</div>
-                                <input className="tenderpositions_buy-percent" placeholder="0" type="number"></input><span>%</span>
+                                <input className="tenderpositions_buy-percent" placeholder="0" type="number" value={this.state.percent} onChange={this.handleChangeP}></input><span>%</span>
                             </div>
                         </div>
                     </div>
-                    {data.pos.map(item => (
+                    {data.pos.map((item, index) => (
                         <div className="tenderpositions_item" key={item.id}>
                             <div className="tenderpositions_number">{item.number}</div>
                             <div className="tenderpositions_info">
@@ -96,7 +138,7 @@ export default class MyTenders_overview extends React.Component {
                                     <div className="tenderpositions_name">{item.title}</div>
                                     <div className="tenderpositions_amount">{item.amount}</div>
                                     <div className="tenderpositions_unit_name">{item.edism}</div>
-                                    <input className="tenderpositions_buy-price" placeholder="Цена..."></input>
+                                    <input className="tenderpositions_buy-price" placeholder="Цена..." onChange={data.pos[index].buy_price = this.value}></input>
                                     <div className="tenderpositions_buy-summ">0</div>
                                 </div>
                                 <div className="tenderpositions_footer">
