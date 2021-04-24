@@ -16,6 +16,7 @@
     color: #d66;
 }
 .header a.active {
+    box-shadow: #c33 0px 0px 5px;
     background: linear-gradient(-225deg, #A445B2 0%, #d41866 40%, #ff0022 100%);
     color: #fefefe;
 }

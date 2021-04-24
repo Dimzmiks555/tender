@@ -20,14 +20,15 @@ class TendersController {
             res.status(500).json(e)
         }
     }
-    // async getOne(req, res) {
-    //     try {
-    //         const post = await PostService.getOne(req.params.id)
-    //         return res.json(post)
-    //     } catch (e) {
-    //         res.status(500).json(e)
-    //     }
-    // }
+    async getOne(req, res) {
+        try {
+            const tender = await TendersService.getOne(req.params.id)
+            console.log(req.params.id);
+            return res.json(tender)
+        } catch (e) {
+            res.status(500).json(e)
+        }
+    }
     // async update(req, res) {
     //     try {
     //         const updatedPost = await PostService.update(req.body);

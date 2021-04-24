@@ -16,6 +16,18 @@ a {
     text-decoration: none;
     color: #111;
 }
+ul,ol,li{
+    padding: 0;
+}
+input{
+    font-family: inherit;
+    font-size: inherit;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .wrapper{
     margin: 0 3%;
     display: flex;

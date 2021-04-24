@@ -17,7 +17,7 @@ router.post('/upload', upload.single('file'), TendersController.create);
 
 router.get('/tenders', TendersController.getAll);
 
-// router.get('/tenders:id');
+router.get('/tenders/:id', TendersController.getOne);
 
 // router.put('/tenders');
 

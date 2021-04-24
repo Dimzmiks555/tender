@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import './mytenders.css';
+
 export default class MyTenders extends React.Component {
 
     constructor(props){
@@ -33,6 +36,29 @@ export default class MyTenders extends React.Component {
           )
       }
       getData(){
+
+        function calcStage (title) {
+          if (title.includes('2-й этап')) {
+            return <h2>2</h2>
+          } 
+          else if (title.includes('3-й этап')) {
+            return <h2>3</h2>
+          }
+          else if (title.includes('4-й этап')) {
+            return <h2>4</h2>
+          }
+          else if (title.includes('5-й этап')) {
+            return <h2>5</h2>
+          }
+          else if (title.includes('6-й этап')) {
+            return <h2>6</h2>
+          }
+          else {
+            return <h2>1</h2>
+          }
+        }
+
+
         const {isLoaded, data} = this.state;
         console.log(data);
         if (!isLoaded) {
@@ -42,8 +68,31 @@ export default class MyTenders extends React.Component {
               <div>
                 {
                   data.map(item => (
-                    <div>
-                      {item.id}
+                    <div className="tenderlist_item" key={item.id}>
+                      <div>
+                        <div className="title">
+                          <Link to={`/mytenders_overview/${item.id}/`}>{item.data?.title}</Link>
+                        </div>
+                        <div className="info">
+                          <div className="id">
+                            ID {item.id}
+                          </div>
+                          <div className="close_date">
+                            {item.data?.close_date}
+                          </div>
+                          <div className="type_name">
+                            {item.data?.type_name}
+                          </div>
+                          <div className="company_name">
+                            {item.data?.company_name}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="stage">
+                          {
+                            calcStage(item.data?.title)
+                          }
+                      </div>
                     </div>
                   ))
                 }
@@ -71,10 +120,9 @@ export default class MyTenders extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="mytenders">
                 <h1>Мои тендеры</h1>
                 <form onSubmit={(e)=>this._handleSubmit(e)}>
-                  <input name="company_id" ref={(ref) => { this.companyInput = ref; }}></input>
                   <input name="file" type="file" ref={(ref) => { this.uploadInput = ref; }}></input>
                   <button type="submit" onClick={(e)=>this._handleSubmit(e)}>Отправить</button>
                 </form>

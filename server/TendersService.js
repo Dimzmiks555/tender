@@ -5,6 +5,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { DOMParser }  from 'xmldom';
 import fetch from 'node-fetch';
+import { response } from "express";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 class TendersService {
@@ -16,7 +17,11 @@ class TendersService {
         let filePath = file.path;
         let fileName = file.filename;
         let id = parseInt(fileName.match(/\d+/))
-        console.log(filePath, file);
+        
+        
+
+        
+
         fs.readFile(filePath, (err, data) => {
             if (err) {
                 console.log("err")
@@ -26,10 +31,18 @@ class TendersService {
                 XMLParser.parseString(xmlStringSerialized, (err, result) => {
                     let positions = result.tenderposition_import.tenderpositions[0].tenderposition;
                     
-                    Tenders.create({
-                        id: id,
-                        pos: positions
-                    });
+                    async function getTender(id, positions){
+                        const res = await fetch(`http://www.tender.pro/api/_tender.info.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=001&id=${id}`);
+                        const json = await res.json();
+                        let data = json.result.data;
+                        Tenders.create({
+                            id: id,
+                            pos: positions,
+                            data: data
+                        });
+                    }
+                    getTender(id, positions);
+                    
                 });
                 
             }
@@ -39,13 +52,13 @@ class TendersService {
         const tenders = await Tenders.find();
         return tenders;
     }
-    // async getOne(id) {
-    //     if (!id) {
-    //         throw new Error('не указан ID')
-    //     }
-    //     const post = await Tenders.findById(id);
-    //     return post;
-    // }
+    async getOne(id) {
+        if (!id) {
+            throw new Error('не указан ID')
+        }
+        const tender = await Tenders.findOne({id: id});
+        return tender;
+    }
 
     // async update(tenders) {
     //     if (!post._id) {

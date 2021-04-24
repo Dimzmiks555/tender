@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const Tenders = new Schema({
     id: Number,
     title: String,
-    pos: Object
+    pos: Object,
+    data: Object
 });
 
 

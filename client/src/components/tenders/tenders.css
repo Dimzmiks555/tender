@@ -22,6 +22,7 @@
     align-items: center;
     justify-content: center;
     background: #c33;
+    box-shadow: #c33 0 0 7px;
     color:#fafafa;
     margin: 0 10px;
 }
@@ -89,7 +90,7 @@
     font-size: 20px;
     font-weight: bold;
 }
-.tenderpositions_item{
+.tenderpositions .tenderpositions_item{
     align-items: center;
     display: flex;
     box-shadow: #ccc 0px 10px 20px;
@@ -98,14 +99,14 @@
     border-radius: 20px;
     margin-bottom: 10px;
 }
-.tenderpositions_header{
+.tenderpositions .tenderpositions_header{
     display: flex;
     align-items: center;
 }
-.tenderpositions_info{
+.tenderpositions .tenderpositions_info{
     flex-grow: 1;
 }
-.tenderpositions_number {
+.tenderpositions .tenderpositions_number {
     font-size: 14px;
     border-radius: 20px;
     display: flex;
@@ -117,15 +118,15 @@
     min-width: 25px;
     height: 25px;
 }
-.tenderpositions_name {
+.tenderpositions .tenderpositions_name {
     width: 50%;
     margin-right: 20px;
 }
-.tenderpositions_amount{
+.tenderpositions .tenderpositions_amount{
     font-weight: bold;
     width: 10%;
 }
-.tenderpositions_description{
+.tenderpositions .tenderpositions_description{
     margin-top: 10px;
     font-weight: bold;
 }
