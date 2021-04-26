@@ -29,14 +29,14 @@ class TendersController {
             res.status(500).json(e)
         }
     }
-    // async update(req, res) {
-    //     try {
-    //         const updatedPost = await PostService.update(req.body);
-    //         return res.json(updatedPost);
-    //     } catch (e) {
-    //         res.status(500).json(e.message)
-    //     }
-    // }
+    async update(req, res) {
+        try {
+            const updatedTender = await TendersService.update(req.body);
+            return res.json(updatedTender);
+        } catch (e) {
+            res.status(500).json(e)
+        }
+    }
     // async delete(req, res) {
     //     try {
     //         const post = await PostService.create(req.params.id);

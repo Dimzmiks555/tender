@@ -1,3 +1,24 @@
+.mytenders_button {
+    border-radius: 20px;
+    margin-left: auto;
+    width: 200px;
+    margin-top: 40px;
+    padding: 20px 14px;
+    display: block;
+    margin-right: 20px;
+    font-weight: bold;
+    color: #c33;
+    box-shadow: #c33 0px 0px 10px;
+    background: linear-gradient(-225deg, #A445B2 0%, #d41866 40%, #ff0022 100%);
+    color: #fefefe;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+.mytenders_button:hover{
+    color: #f4f4f4;
+}
 .mytenders form{
     margin-bottom: 40px;
 }

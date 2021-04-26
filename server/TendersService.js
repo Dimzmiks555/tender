@@ -60,13 +60,20 @@ class TendersService {
         return tender;
     }
 
-    // async update(tenders) {
-    //     if (!post._id) {
-    //         throw new Error('не указан ID')
-    //     }
-    //     const updatedTenders = await Tenders.findByIdAndUpdate(post._id, post, {new: true})
-    //     return updatedTenders;
-    // }
+    async update(tenders) {
+        if (!tender._id) {
+            throw new Error('не указан ID')
+        }
+        const updatedTenders = await Tenders.updateOne(
+            {id: tenders.id},
+            {
+                $set: {
+                    'pos.1' : { start_price : tenders.start_price }
+                }
+            }
+        )
+        return updatedTenders;
+    }
 
     // async delete(id) {
     //         if (!id) {
