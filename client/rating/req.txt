@@ -1,0 +1,20 @@
+POST https://www2.tender.pro/api/v1/tender.offer.rating/509868 HTTP/1.1
+Host: www2.tender.pro
+Connection: keep-alive
+Content-Length: 162
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+Content-Type: application/json
+Origin: https://www2.tender.pro
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://www2.tender.pro/view_tender.shtml?sid=2349383&tenderid=509868&mode=buy&GYKPZL&tab=goods
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ym_d=1616399623; _ym_uid=1616399623760232374; _ga=GA1.2.1654269055.1616399623; top100_id=t1.-1.303886852.1617348259145; last_visit=1618401117800::1618411917800; TPROv1=Td2D4mB6koVyC3BhEgAgAg==; __utmz=1.1619188070.18.3.utmcsr=help.tender.pro|utmccn=(referral)|utmcmd=referral|utmcct=/; _ym_isad=2; __utma=1.1654269055.1616399623.1619513390.1619528960.28; _ym_visorc=w; __utmc=1; __utmb=1.24.9.1619530966073
+
+{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":509868,"companyid":343375,"ti":"2021-04-27 16:48:00"},"debug":{}}
