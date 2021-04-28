@@ -11,6 +11,7 @@ export default class MyTenders_overview extends React.Component {
           error: null,
           isLoaded: false,
           data: {},
+          rating: {},
           buy_price: '0',
           percent: null,
           analog_name: ''
@@ -39,7 +40,8 @@ export default class MyTenders_overview extends React.Component {
             });
             }
         )
-    }
+        
+        }
     _HandlerSubmit(e) {
         e.preventDefault();
         // let data = this.buy_price;
@@ -63,11 +65,11 @@ export default class MyTenders_overview extends React.Component {
                 <div className="info" id="info">
                     <h1>Тендер № {this.state.data.id}</h1>
                     <div className="close_date">
-                        {this.state.data.data.close_date}
+                        {this.state.data.data?.close_date}
                     </div>
                 </div>
                 <div className="type_name">
-                    {data.data.type_name}
+                    {data.data?.type_name}
                 </div>
                 {/* <div>
                     {dataItem.map(item => (
@@ -106,7 +108,7 @@ export default class MyTenders_overview extends React.Component {
                             </div>
                         </div>
                         {data.pos.map((item, index) => (
-                            <Position item={item} index={index}></Position>
+                            <Position item={item} index={index} rating={this.state.rating}></Position>
                         ))}
                     </div>
                 </form>
