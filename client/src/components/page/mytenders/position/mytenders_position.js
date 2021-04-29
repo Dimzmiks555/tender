@@ -15,9 +15,17 @@ const Position = observer(
             }
         }
         componentDidMount() {
+            let t = new Date();
+            let myT =
+            t.getFullYear() + '-' +
+            ('0' + (t.getMonth() + 1)).slice(-2) + '-' +
+            ('0' + t.getDate()).slice(-2)+ " " +
+            ('0' + t.getHours()).slice(-2) + ":" +
+            ('0' + t.getMinutes()).slice(-2) + ":" +
+            ('0' + t.getSeconds()).slice(-2);
             const params = {
                 method: 'POST',
-                body: '{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":509868,"companyid":343375,"ti":"2021-04-30 15:00:00"},"debug":{}}',
+                body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id": ${this.props.tender_id},"companyid":343375,"ti": "${myT}"},"debug":{}}`,
                 headers: {
                     'Accept': 'application/json, text/javascript, */*; q=0.01',
                     'Content-Type': 'application/json'
@@ -28,6 +36,7 @@ const Position = observer(
             .then(
                 (result) => {
                     try {
+                        console.log(result);
                         let rate = result.result.data[0].offer_rating.split(';');
                         this.setState({
                             rating: rate

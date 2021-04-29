@@ -23,20 +23,27 @@
     margin-bottom: 40px;
 }
 .mytenders .tenderlist{
-    padding: 5px 0;
     margin-top: 40px;
     box-shadow: #ccc 0px 10px 20px;
     background: #fefefe;
     border-radius: 20px;
     
 }
+.mytenders .tenderpositions_item:first-child{
+    padding: 10px 0 10px 20px;
+    align-items: center;
+}
 .mytenders .tenderpositions_item{
     border-bottom: 1px solid #ccc;
-    align-items: center;
+    align-items: stretch;
     display: flex;
-    padding: 10px 20px;
+    padding: 0 0 0 20px;
+}
+.mytenders .tenderpositions_item:last-child{
+    border-bottom: none;
 }
 .mytenders .tenderpositions_header{
+    padding: 10px 0 0;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -44,7 +51,7 @@
 .mytenders .tenderpositions_footer{
     display: flex;
     align-items: center;
-    background: #eee;
+    background: #f4f4f4;
     padding: 5px 5px;
 }
 .mytenders .tenderpositions_info{
@@ -56,17 +63,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto 20px auto 0;
     color: #fcfcfc;
     background: #c33;
     box-shadow: #c33 0px 0px 5px;
-    margin-right: 20px;
     min-width: 30px;
     height: 30px;
 }
 .mytenders .tenderpositions_name {
     width: 50%;
     margin-right: 20px;
-    
     word-break: keep-all;
 }
 .mytenders .head .tenderpositions_name{
@@ -136,11 +142,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
     min-width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    box-shadow: #000 0 0 5px;
 }
 .mytenders form {
     margin-top: 60px;
@@ -150,9 +152,32 @@
 }
 .mytenders #upload_button {
     box-shadow: #c33 0px 0px 5px;
+    background: transparent;
+    color: #c33;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: #c33 2px solid;
+    cursor: pointer;
+}
+.mytenders #upload_button:hover{
+    background: #c33;
+    color: #fefefe;
+}
+.mytenders #input_submit:hover{
+    background: #c33;
+    color: #fefefe;
+}
+.mytenders #input_submit{
+    cursor: pointer;
+    box-shadow: #c33 0px 0px 5px;
     background: linear-gradient(-225deg, #A445B2 0%, #d41866 40%, #ff0022 100%);
     color: #fefefe;
     padding: 20px 40px;
     border-radius: 50px;
     font-weight: bold;
+    border: none;
+    margin-left: 40px;
+    font-family: inherit;
+    font-size: inherit;
 }

@@ -33,7 +33,7 @@ class TendersService {
                     for (let i = 0; i < positions.length; i++){
                         positions[i] = Object.assign(positions[i], {
                             buy_price: 0,
-                            analog_name: 0,
+                            analog_name: '',
                             percent: 0
                         })
                     };

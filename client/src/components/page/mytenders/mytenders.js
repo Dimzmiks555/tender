@@ -127,7 +127,7 @@ export default class MyTenders extends React.Component {
                 <form onSubmit={(e)=>this._handleSubmit(e)}>
                   <input id="input__file" name="file" type="file" ref={(ref) => { this.uploadInput = ref; }}></input>
                   <label for="input__file" id="upload_button">Выберите файл</label>
-                  <button type="submit" onClick={(e)=>this._handleSubmit(e)}>Отправить</button>
+                  <button type="submit" id="input_submit" onClick={(e)=>this._handleSubmit(e)}>Отправить</button>
                 </form>
                 {this.getData()}
             </div>

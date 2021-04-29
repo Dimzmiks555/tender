@@ -48,7 +48,8 @@ export default class MyTenders_overview extends React.Component {
     }
     _HandlerSubmit(e) {
         e.preventDefault();
-        // let data = this.buy_price;
+        // let data = {
+        // };
         // await fetch('http://127.0.0.1:5000/api/tenderedit', {
         //     method: 'POST',
         //     body: data
@@ -114,7 +115,7 @@ export default class MyTenders_overview extends React.Component {
                         </div>
                         {console.log(data)}
                         {data.pos.map((item, index) => (
-                            <Position item={item} index={index} rating={this.state.rating} percent={this.state.percent}></Position>
+                            <Position item={item} index={index} rating={this.state.rating} percent={this.state.percent} tender_id={this.state.data.id}></Position>
                         ))}
                     </div>
                 </form>
