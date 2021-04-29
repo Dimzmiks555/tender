@@ -16,6 +16,7 @@ export default class MyTenders_overview extends React.Component {
           percent: null,
           analog_name: ''
         }
+        this.handleChangeP = this.handleChangeP.bind(this);
       }
 
 
@@ -42,6 +43,9 @@ export default class MyTenders_overview extends React.Component {
         )
         
         }
+    handleChangeP(e){
+        this.setState({percent: e.target.value})
+    }
     _HandlerSubmit(e) {
         e.preventDefault();
         // let data = this.buy_price;
@@ -92,12 +96,13 @@ export default class MyTenders_overview extends React.Component {
                 <div>
                 </div>
                 <form onSubmit={(e)=>this._HandlerSubmit(e)}> 
+                    
                     <button type="submit" className="mytenders_button" onSubmit={(e)=>this._HandlerSubmit(e)}>Сохранить</button>
                     <div className="tenderlist">
                         <div className="tenderpositions_item" >
                             <div className="tenderpositions_number">№</div>
                             <div className="tenderpositions_info">
-                                <div className="tenderpositions_header">
+                                <div className="tenderpositions_header head">
                                     <div className="tenderpositions_name">Наименование</div>
                                     <div className="tenderpositions_amount">Кол-во</div>
                                     <div className="tenderpositions_unit_name">Ед. изм</div>
@@ -107,8 +112,9 @@ export default class MyTenders_overview extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        {console.log(data)}
                         {data.pos.map((item, index) => (
-                            <Position item={item} index={index} rating={this.state.rating}></Position>
+                            <Position item={item} index={index} rating={this.state.rating} percent={this.state.percent}></Position>
                         ))}
                     </div>
                 </form>

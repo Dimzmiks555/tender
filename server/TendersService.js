@@ -30,7 +30,13 @@ class TendersService {
                 var xmlStringSerialized = new DOMParser().parseFromString(file, "text/xml");
                 XMLParser.parseString(xmlStringSerialized, (err, result) => {
                     let positions = result.tenderposition_import.tenderpositions[0].tenderposition;
-                    
+                    for (let i = 0; i < positions.length; i++){
+                        positions[i] = Object.assign(positions[i], {
+                            buy_price: 0,
+                            analog_name: 0,
+                            percent: 0
+                        })
+                    };
                     async function getTender(id, positions){
                         const res = await fetch(`http://www.tender.pro/api/_tender.info.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=001&id=${id}`);
                         const json = await res.json();

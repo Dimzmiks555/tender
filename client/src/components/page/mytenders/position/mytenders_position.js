@@ -10,7 +10,8 @@ const Position = observer(
             this.state = {
                 rating: this.props.rating,
                 err: null,
-                params: []
+                params: [],
+                amount: this.props.item.amount
             }
         }
         componentDidMount() {
@@ -50,40 +51,35 @@ const Position = observer(
                 if (rating != undefined) {
                     let tt = rating.slice(0, rating.length - 3).slice(3);
                     tt = tt.split(',');
-                    console.log(tt);
-                    return tt[i]
+                    return tt[i].toString()
                 }
             }
             let numb = func(rating, 1);
             let bg = func(rating, 5);
-            // this.setState({params: func()});
-            // 
-            // console.log(this.state.params);
             
-
-            // const tt = rating.substring(0, rating.length - 3).substring(3);
             return (
                 <div className="tenderpositions_item" key={item.id}>
                     <div className="tenderpositions_number">{item.number}</div>
                     <div className="tenderpositions_info">
                         <div className="tenderpositions_header">
                             <div className="tenderpositions_name">{item.title}</div>
-                            <div className="tenderpositions_amount">{item.amount}</div>
+                            <div className="tenderpositions_amount" >{Number(item.amount) }</div>
                             <div className="tenderpositions_unit_name">{item.edism}</div>
-                            <input className="tenderpositions_buy-price" placeholder="Цена..." onChange={e => { PositionStore.handleBP(e, index) }} value={PositionStore.props.tenderPos[index]?.start_price}></input>
-                            <div className="tenderpositions_buy-summ">0</div>
+                            <input className="tenderpositions_buy-price" ref={(el) => this.buy_price = el} placeholder="Цена..." onChange={e => { PositionStore.handleBP(e, index) }} value={PositionStore.props.tenderPos[index]?.start_price}></input>
+                            <div className="tenderpositions_buy-summ">{!PositionStore.props.tenderPos[index]?.start_price ? '0' : Number(this.state.amount) * PositionStore.props.tenderPos[index]?.start_price}</div>
                         </div>
                         <div className="tenderpositions_footer">
-                            <input className="tenderpositions_name-end" placeholder="Введите наименование предложения..."></input>
+                            <input className="tenderpositions_name-end" placeholder="Введите наименование предложения..." defaultValue={item.analog_name}></input>
                             <div className="tenderpositions_amount"></div>
                             <div className="tenderpositions_unit_name"></div>
-                            <div className="tenderpositions_sell-price">{PositionStore.props.tenderPos[index]?.start_price}</div>
-                            <div className="tenderpositions_buy-summ">0</div>
+                            {PositionStore.handleSP((this.props.percent / 100 + 1) * this.buy_price?.value, index)}
+                            <div className="tenderpositions_sell-price" ref={el => this.sell_price = el}>{NaN ? '0' : (this.props.percent / 100 + 1) * this.buy_price?.value}</div>
+                            <div className="tenderpositions_buy-summ">{PositionStore.props.tenderPos[index]?.sell_price * Number(this.state.amount)}</div>
                         </div>
                         <div className="tenderpositions_description">{item.description}</div>
                     </div>
                     
-                    <div className="rating" style={`{background: "${bg}}"`} >{numb}</div>
+                    <div className="rating" style={{background: bg}} >{numb}</div>
                 </div>
             )
         }

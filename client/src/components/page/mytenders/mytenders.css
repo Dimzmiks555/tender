@@ -69,6 +69,12 @@
     
     word-break: keep-all;
 }
+.mytenders .head .tenderpositions_name{
+    width: calc(50% - 40px);
+    margin-right: 20px;
+    
+    word-break: keep-all;
+}
 .mytenders .tenderpositions_name-end{
     color:#c33;
     width: calc(50% + 3px);
@@ -134,5 +140,19 @@
     min-width: 40px;
     height: 40px;
     border-radius: 20px;
-    box-shadow: #A445B2 0 0 10px;
+    box-shadow: #000 0 0 5px;
+}
+.mytenders form {
+    margin-top: 60px;
+}
+.mytenders #input__file {
+    display: none;
+}
+.mytenders #upload_button {
+    box-shadow: #c33 0px 0px 5px;
+    background: linear-gradient(-225deg, #A445B2 0%, #d41866 40%, #ff0022 100%);
+    color: #fefefe;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-weight: bold;
 }

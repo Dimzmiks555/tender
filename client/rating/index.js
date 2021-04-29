@@ -17,7 +17,7 @@ app.get('/', (req,res) => {
     async function getRating(){
         const params = {
             method: 'POST',
-            body: '{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":509868,"companyid":343375,"ti":"2021-04-30 15:00:00"},"debug":{}}',
+            body: '{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":510683,"companyid":343375,"ti":"2021-04-29 9:00:00"},"debug":{}}',
             headers: {
                 'Accept': 'application/json, text/javascript, */*; q=0.01',
                 'Content-Type': 'application/json'
