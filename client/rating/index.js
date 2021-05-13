@@ -23,31 +23,19 @@ app.get('/', (req,res) => {
         ('0' + t.getHours()).slice(-2) + ":" +
         ('0' + t.getMinutes()).slice(-2) + ":" +
         ('0' + t.getSeconds()).slice(-2);
-        for (let id = 0; id < 1000000; id++){
-            console.log(id);
-            const res = await fetch(URL, {
-                method: 'POST',
-                body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":510683,"companyid": ${id},"ti":"${myT}"},"debug":{}}`,
-                headers: {
-                    'Accept': 'application/json, text/javascript, */*; q=0.01',
-                    'Content-Type': 'application/json'
-                }
-            });
-            let json = await res.json();
-            let arr = json.result.data[0].offer_rating.split(';');
-            console.log(json);
-            for (let i = 0; i < arr.length; i++) {
-
-                // let tt = arr[i].slice(0, arr[i].length - 3).slice(3);
-                //     tt = tt.split(',');
-                //     if (tt[1] != 0){
-                //         console.log(id + 'yes');
-                //     } else {
-                //         console.log(id)
-                //     }
+        const res = await fetch(URL, {
+            method: 'POST',
+            body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":512968,"companyid": ${id},"ti":"${myT}"},"debug":{}}`,
+            headers: {
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Content-Type': 'application/json'
             }
-            return JSON.stringify(json)
-        }
+        });
+        let json = await res.json();
+        let arr = json.result.data[0].offer_rating.split(';');
+        console.log(arr);
+        return JSON.stringify(arr)
+        
         
     }
     res.send(getRating());
