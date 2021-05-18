@@ -1,0 +1,40 @@
+<tenderposition_import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://www.tender.pro/schema/tenderposition_import.xsd">
+<tenderpositions>
+<nds>0</nds>
+  <tenderposition>
+    <number>1</number>
+    <tpid>14035036</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>16.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Дверь входная с фурнитурой Forpost левая, 2050 х 960 мм</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>2</number>
+    <tpid>14035035</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>1.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Дверь входная металическая 2050х900</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+</tenderpositions>
+</tenderposition_import>
