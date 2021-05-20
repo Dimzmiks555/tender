@@ -104,6 +104,7 @@ export default class MyTenders_overview extends React.Component {
                             <div className="tenderpositions_number">№</div>
                             <div className="tenderpositions_info">
                                 <div className="tenderpositions_header head">
+                                    <div ></div>
                                     <div className="tenderpositions_name">Наименование</div>
                                     <div className="tenderpositions_amount">Кол-во</div>
                                     <div className="tenderpositions_unit_name">Ед. изм</div>

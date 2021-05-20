@@ -11,7 +11,8 @@ const Position = observer(
                 rating: this.props.rating,
                 err: null,
                 params: [],
-                amount: this.props.item.amount
+                amount: this.props.item.amount,
+                total: []
             }
         }
         componentDidMount() {

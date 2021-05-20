@@ -73,7 +73,7 @@ export default class MyTenders extends React.Component {
                     <div className="tenderlist_item" key={item.id}>
                       <div>
                         <div className="title">
-                          <Link to={`/mytenders_overview/${item.id}/`}>{item.data?.title}</Link>
+                          {item.data?.title ? <Link to={`/mytenders_overview/${item.id}/`}>{item.data?.title}</Link> : <Link to={`/mytenders_overview/${item.id}/`}>Закрытый тендер</Link>}
                         </div>
                         <div className="info">
                           <div className="id">

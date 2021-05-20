@@ -1,0 +1,74 @@
+<tenderposition_import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://www.tender.pro/schema/tenderposition_import.xsd">
+<tenderpositions>
+<nds>0</nds>
+  <tenderposition>
+    <number>1</number>
+    <tpid>14046246</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>220.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Профнастил оцинкованный НС 35 0,5x1060x6000 мм			</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>2</number>
+    <tpid>14046245</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>110.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Профнастил оцинкованный НС 35 0,5x1060x3000 мм			</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>3</number>
+    <tpid>14046244</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>14500.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Саморез кровельный оцинкованный 4,8х35 мм	М-8	кровельный по дереву</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>4</number>
+    <tpid>14046243</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>35.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Конек оцинкованный 0,5*300*300*2000 мм	</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+</tenderpositions>
+</tenderposition_import>
