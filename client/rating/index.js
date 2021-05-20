@@ -25,16 +25,16 @@ app.get('/', (req,res) => {
         ('0' + t.getSeconds()).slice(-2);
         const res = await fetch(URL, {
             method: 'POST',
-            body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":2349383,"lang":"ru","params":{"id":512968,"companyid": ${id},"ti":"${myT}"},"debug":{}}`,
+            body: `{"id":77,"jsonrpc":"2.0","method":"z_tender_party_list","sid":2349383,"lang":"ru","params":{"id":512968,"_ip": "127.0.0.1","ti":"${myT}"},"_sid": "32323243"}`,
             headers: {
                 'Accept': 'application/json, text/javascript, */*; q=0.01',
                 'Content-Type': 'application/json'
             }
         });
         let json = await res.json();
-        let arr = json.result.data[0].offer_rating.split(';');
-        console.log(arr);
-        return JSON.stringify(arr)
+        let arr = json.result;
+        console.log(myT);
+        return myT
         
         
     }

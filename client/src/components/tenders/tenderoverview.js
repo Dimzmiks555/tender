@@ -37,7 +37,7 @@ const TenderOverview = observer(
                 } else {
                     this.setState({
                         isLoaded: true,
-                        dataInfo: result?.result.data
+                        dataInfo: result?.result?.data
                     });
                 }    
             },
@@ -83,7 +83,7 @@ const TenderOverview = observer(
                         )}
                     </div> */}
                     <div className="title">
-                        {dataInfo.title}
+                        {dataInfo?.title}
                     </div>
                     <div className="winners_list">
                         {dataInfo.winners_list}

@@ -39,19 +39,19 @@ export default class MyTenders extends React.Component {
       getData(){
 
         function calcStage (title) {
-          if (title.includes('2-й этап')) {
+          if (title?.includes('2-й этап')) {
             return <h2>2</h2>
           } 
-          else if (title.includes('3-й этап')) {
+          else if (title?.includes('3-й этап')) {
             return <h2>3</h2>
           }
-          else if (title.includes('4-й этап')) {
+          else if (title?.includes('4-й этап')) {
             return <h2>4</h2>
           }
-          else if (title.includes('5-й этап')) {
+          else if (title?.includes('5-й этап')) {
             return <h2>5</h2>
           }
-          else if (title.includes('6-й этап')) {
+          else if (title?.includes('6-й этап')) {
             return <h2>6</h2>
           }
           else {

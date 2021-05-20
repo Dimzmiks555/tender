@@ -40,7 +40,7 @@ class TendersService {
                     async function getTender(id, positions){
                         const res = await fetch(`http://www.tender.pro/api/_tender.info.json?_key=1732ede4de680a0c93d81f01d7bac7d1&company_id=001&id=${id}`);
                         const json = await res.json();
-                        let data = json.result.data;
+                        let data = json.result?.data;
                         Tenders.create({
                             id: id,
                             pos: positions,

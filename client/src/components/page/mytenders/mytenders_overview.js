@@ -83,16 +83,16 @@ export default class MyTenders_overview extends React.Component {
                     )}
                 </div> */}
                 <div className="title">
-                    {this.state.data.data.title}
+                    {this.state.data?.data?.title}
                 </div>
                 <div className="winners_list">
-                    {this.state.data.data.winners_list}
+                    {this.state.data.data?.winners_list}
                 </div>
                 <div className="face_name">
-                    {this.state.data.data.face_name}
+                    {this.state.data.data?.face_name}
                 </div>
                 <div className="face_phone">
-                    {this.state.data.data.face_phone}
+                    {this.state.data.data?.face_phone}
                 </div>
                 <div>
                 </div>
