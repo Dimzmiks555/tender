@@ -145,7 +145,6 @@
     min-width: 40px;
 }
 .mytenders form {
-    margin-top: 60px;
 }
 .mytenders #input__file {
     display: none;
@@ -180,4 +179,10 @@
     margin-left: 40px;
     font-family: inherit;
     font-size: inherit;
+}
+.total {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
 }

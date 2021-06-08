@@ -19,7 +19,7 @@ router.get('/tenders', TendersController.getAll);
 
 router.get('/tenders/:id', TendersController.getOne);
 
-router.put('/tenders/:id');
+router.put('/tenders/:id', TendersController.update);
 
 // router.delete('/tenders:id');
 

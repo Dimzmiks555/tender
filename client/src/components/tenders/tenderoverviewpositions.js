@@ -7,7 +7,8 @@ export default class TenderOverviewPositions extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            data: []
+            data: [],
+            rating: null
         };
     }
     componentDidMount() {
@@ -34,24 +35,71 @@ export default class TenderOverviewPositions extends React.Component {
                 });
             }
         )
+        let t = new Date();
+        let myT =
+        t.getFullYear() + '-' +
+        ('0' + (t.getMonth() + 1)).slice(-2) + '-' +
+        ('0' + t.getDate()).slice(-2)+ " " +
+        ('0' + t.getHours()).slice(-2) + ":" +
+        ('0' + t.getMinutes()).slice(-2) + ":" +
+        ('0' + t.getSeconds()).slice(-2);
+        const params = {
+            method: 'POST',
+            body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":479800,"lang":"ru","params":{"id": ${this.props.match.params.id},"companyid":210373,"ti": "${myT}"},"debug":{}}`,
+            headers: {
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Content-Type': 'application/json'
+            }
+        }
+        fetch(`https://www2.tender.pro/api/`, params)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                try {
+                    console.log(result);
+                    let rate = result.result.data[0].offer_rating.split(';');
+                    console.log(rate);
+                    this.setState({
+                        rating: rate
+                    });
+                } catch (error) {
+                    <h2>Нет доступа к API</h2>
+                }
+                },
+                (error) => {
+                this.setState({
+                    error
+                });
+                }
+            )
+    
     }
     componentWillUnmount() {
         SidebarStore.hideSideBar();
     }
     getData() {
         
-        console.log(this.state);
+        let rating = this.state.rating;
+        let func = (rating, i) => {
+            if (rating != undefined) {
+                let tt = rating.slice(0, rating.length - 3).slice(3);
+                tt = tt.split(',');
+                return tt[i].toString()
+            }
+        }
+
         const {error, isLoaded, data } = this.state;
         if (error) {
           return <div>Ошибка: {error.message}</div>;
         } else if (!isLoaded) {
           return <h2>Загрузка...</h2>;
         } else if (Array.isArray(data)){
-        
+            
           return (
             <div className="tenderpositions">
               { 
-                data.map(item => (
+
+                data.map((item, index) => (
                 <div className="tenderpositions_item" key={item.id}>
                     <div className="tenderpositions_number">{item.number}</div>
                     <div className="tenderpositions_info">
@@ -59,6 +107,7 @@ export default class TenderOverviewPositions extends React.Component {
                             <div className="tenderpositions_name">{item.name}</div>
                             <div className="tenderpositions_amount">{item.amount}</div>
                             <div className="tenderpositions_unit_name">{item.unit_name}</div>
+                            <div className="rating" style={{background: func(rating[index], 5)}} >{func(rating[index], 1)}</div>
                         </div>
                         <div className="tenderpositions_description">{item.description}</div>
                     </div>

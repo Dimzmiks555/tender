@@ -66,19 +66,37 @@ class TendersService {
         return tender;
     }
 
-    async update(tenders) {
-        if (!tender._id) {
-            throw new Error('не указан ID')
-        }
-        const updatedTenders = await Tenders.updateOne(
-            {id: tenders.id},
-            {
-                $set: {
-                    'pos.1' : { start_price : tenders.start_price }
+    async update(tender) {
+        console.log(tender)
+        let updatedTender;
+        if (tender.buy_price != undefined) {
+            updatedTender = await Tenders.updateOne(
+                {
+                    id: tender.tender_id,
+                    "pos.number.0": (tender.index + 1).toString()
+                },
+                {
+                    $set: {
+                        "pos.$.buy_price" : tender.buy_price
+                    }
                 }
-            }
-        )
-        return updatedTenders;
+            )
+        } else if (tender.analog_name != undefined) {
+            updatedTender = await Tenders.updateOne(
+                {
+                    id: tender.tender_id,
+                    "pos.number.0": (tender.index + 1).toString()
+                },
+                {
+                    $set: {
+                        "pos.$.analog_name" : tender.analog_name
+                    }
+                }
+            )
+        } else {
+            return
+        }
+        return updatedTender;
     }
 
     // async delete(id) {
