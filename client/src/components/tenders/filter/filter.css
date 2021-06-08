@@ -1,12 +1,11 @@
 .tendersearch_filter{
-    box-shadow: #ccc 0px 0px 20px;
     display: block;
     margin-top: 40px;
     min-height: 200px;
     background: #fcfcfc;
     margin-bottom: 40px;
     border-radius: 10px;
-    padding: 10px 40px;
+    padding: 10px 0px;
 }
 .tendersearch_filter select{
     outline: none;

@@ -14,9 +14,10 @@ export default class Header extends React.Component{
                         <h3>Тендерная система</h3>
                     </div>
                     <div className="navbar">
-                        <NavLink exact to="/" activeClassName="active">Главная</NavLink> 
+                        <NavLink exact to="/" activeClassName="active">Сводка</NavLink> 
                         <NavLink to="/tendersearch" activeClassName="active">Поиск тендеров</NavLink>
                         <NavLink to="/mytenders" activeClassName="active">Мои тендеры</NavLink>
+                        <NavLink to="/contragents" activeClassName="active">Поставщики</NavLink>
                     </div>
                 </div>
               );

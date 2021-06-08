@@ -1,0 +1,6 @@
+.contr__type a{
+    margin-right: 20px;
+}
+.contr__type a:hover{
+    color: #c33;
+}
