@@ -99,6 +99,7 @@ class TendersService {
         return updatedTender;
     }
 
+
     // async delete(id) {
     //         if (!id) {
     //             throw new Error('не указан ID')

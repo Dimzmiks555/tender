@@ -19,6 +19,7 @@
 }
 
 .pagea4 {
+    font-family: "Times New Roman", Times, serif; 
     padding: 83.5px 41px 83.5px 83.5px;
     width: 720px;
     height: 1100px;
@@ -43,7 +44,7 @@
 .pagea4__title {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 .pagea4__title > p {

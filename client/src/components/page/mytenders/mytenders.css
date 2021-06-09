@@ -10,9 +10,11 @@
 .tenderoverview__sidebar button {
     display: block;
     width: 200px;
-    height: 40px;
+    height: 40px;   
 }
-
+.tenderoverview .title {
+    margin-top: 30px;
+}
 .mytenders_button {
     border-radius: 20px;
     margin-left: auto;

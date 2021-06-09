@@ -1,6 +1,7 @@
 import React from 'react';
 import crypt from './crypt.png'
 import stamp from './stamp.jpg'
+import logo from './LOGO.jpg'
 import './DocKP.css'
 
 export default class DocKP extends React.Component{
@@ -12,7 +13,7 @@ export default class DocKP extends React.Component{
             <div className="document">
                 <div className="pagea4">
                     <div className="pagea4__header">
-                        <img src="/LOGO.svg"></img>
+                        <img src={logo}></img>
                         <div className="pagea4__req">
                             <p>Российская Федерация Воронежской область, Лискинский район, город Лиски</p>
                             <p> ИП Аветикян Липарит Ашотович </p>

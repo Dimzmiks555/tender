@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './mytenders.css';
-import Position from './position/mytenders_position';
-import PositionStore from './position/PositionStore';
+import '../mytenders.css';
+import Position from '../position/mytenders_position';
+import PositionStore from '../position/PositionStore';
 
 
 const MyTenders_overview = observer(
@@ -62,6 +62,21 @@ const MyTenders_overview = observer(
             //     console.log(error);
             // })
         }
+        handleClick(id){
+
+            let data = {
+                id: id
+            }
+
+            fetch(`localhost:3000/api/docs/${this.state.data.id}`, {
+                method: 'POST',
+                body: data
+            })
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+        }
         getData(){
             const {error, isLoaded, data} = this.state;
             if (error) {
@@ -73,16 +88,15 @@ const MyTenders_overview = observer(
                     <div className="tenderoverview">
                         <div className="tenderoverview__mainblock">
                             <div className="info" id="info">
-                                <h1>Тендер № {this.state.data.id}</h1>
+                            <div className="title">
+                                {this.state.data?.data?.title}
+                            </div>
                                 <div className="close_date">
                                     {this.state.data.data?.close_date}
                                 </div>
                             </div>
                             <div className="type_name">
                                 {data.data?.type_name}
-                            </div>
-                            <div className="title">
-                                {this.state.data?.data?.title}
                             </div>
                             <div className="winners_list">
                                 {this.state.data.data?.winners_list}
@@ -131,7 +145,7 @@ const MyTenders_overview = observer(
                         </div>
                         <div className="tenderoverview__sidebar">
                             <Link to={`/documents/kp/${this.state.data.id}`}>
-                                <a>Сформировать КП</a>
+                                <a onClick={this.handleClick(this.state.data.id)}>Сформировать КП</a>
                             </Link>
                         </div>
                     </div>
