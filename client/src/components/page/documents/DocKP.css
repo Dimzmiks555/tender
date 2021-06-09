@@ -1,0 +1,95 @@
+@media print { /* Стиль для печати */
+    body, .document, .page, .wrapper, #root, .header{
+        visibility: hidden;
+    }
+    /* Блок который нужно отобразить */
+    .pagea4 {
+        visibility: visible;
+        width:  100%; height: 100%; 
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.document{
+    display: flex;
+    justify-content: center;
+}
+
+.pagea4 {
+    padding: 83.5px 41px 83.5px 83.5px;
+    width: 720px;
+    height: 1100px;
+    background: #fff;
+    box-shadow: 0 0 30px #ccc;
+}
+.pagea4__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.pagea4__header img{
+    width: 30%;
+}
+.pagea4__req {
+    text-align: right;
+    font-size: 10px;
+}
+.pagea4__req p {
+    margin: 4px;
+}
+.pagea4__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+}
+.pagea4__title > p {
+    margin-top: 30px;
+}
+.pagea4__gifter {
+    font-size: 12px;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+.pagea4__gifter p {
+    margin: 5px;
+}
+.pagea4__maintitle {
+    margin-top: 40px;
+    text-align: center;
+}
+table {
+    font-size: 12px;
+    border-collapse: collapse;
+}
+.pagea4__footer{
+    margin-top: 40px;
+    display: flex;
+}
+.pagea4__info {
+    width: 35%;
+    font-size: 12px;
+}
+.pagea4__crypt img{
+    margin-left: 10px;
+    transform: translateY(14px);
+    width: 100px;
+    height: auto;
+}
+.pagea4__stamp {
+    position: relative;
+    margin-top: 33px;
+    margin-left: 40px;
+}
+.pagea4__stamp img{
+
+    position: absolute;
+    margin-left: 10px;
+    transform: translate(-55px,-35px);
+    width: 150px;
+    height: auto;
+}

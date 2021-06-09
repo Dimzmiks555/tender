@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './mytenders.css';
 import Position from './position/mytenders_position';
 import PositionStore from './position/PositionStore';
@@ -70,70 +71,70 @@ const MyTenders_overview = observer(
             } else {
                 return (
                     <div className="tenderoverview">
-                    <div className="info" id="info">
-                        <h1>Тендер № {this.state.data.id}</h1>
-                        <div className="close_date">
-                            {this.state.data.data?.close_date}
-                        </div>
-                    </div>
-                    <div className="type_name">
-                        {data.data?.type_name}
-                    </div>
-                    {/* <div>
-                        {dataItem.map(item => (
-                            <div>{item.name}</div>
-                            )
-                        )}
-                    </div> */}
-                    <div className="title">
-                        {this.state.data?.data?.title}
-                    </div>
-                    <div className="winners_list">
-                        {this.state.data.data?.winners_list}
-                    </div>
-                    <div className="face_name">
-                        {this.state.data.data?.face_name}
-                    </div>
-                    <div className="face_phone">
-                        {this.state.data.data?.face_phone}
-                    </div>
-                    <div>
-                    </div>
-                    <div className="total">
-                        <p>
-                            Сумма закупки: {PositionStore.getBuyTotal().toFixed(2)}
-                        </p>
-                        <p>
-                            Сумма продажи: {PositionStore.getSellTotal().toFixed(2)}
-                        </p>
-                        <p>
-                            Маржа: {(PositionStore.getSellTotal().toFixed(2) - PositionStore.getBuyTotal()).toFixed(2)}
-                        </p>
-                    </div>
-                    <form onSubmit={(e)=>this._HandlerSubmit(e)}> 
-                        
-                        <div className="tenderlist">
-                            <div className="tenderpositions_item" >
-                                <div className="tenderpositions_number">№</div>
-                                <div className="tenderpositions_info">
-                                    <div className="tenderpositions_header head">
-                                        <div ></div>
-                                        <div className="tenderpositions_name">Наименование</div>
-                                        <div className="tenderpositions_amount">Кол-во</div>
-                                        <div className="tenderpositions_unit_name">Ед. изм</div>
-                                        <div className="tenderpositions_buy-summ">Цена</div>
-                                        <div className="tenderpositions_buy-summ">Сумма</div>
-                                        <input className="tenderpositions_buy-percent" placeholder="0" type="number" value={this.state.percent} onChange={this.handleChangeP}></input><span>%</span>
-                                    </div>
+                        <div className="tenderoverview__mainblock">
+                            <div className="info" id="info">
+                                <h1>Тендер № {this.state.data.id}</h1>
+                                <div className="close_date">
+                                    {this.state.data.data?.close_date}
                                 </div>
                             </div>
-                            {data.pos.map((item, index) => (
-                                <Position item={item} index={index} rating={this.state.rating} percent={this.state.percent} tender_id={this.state.data.id}></Position>
-                            ))}
+                            <div className="type_name">
+                                {data.data?.type_name}
+                            </div>
+                            <div className="title">
+                                {this.state.data?.data?.title}
+                            </div>
+                            <div className="winners_list">
+                                {this.state.data.data?.winners_list}
+                            </div>
+                            <div className="face_name">
+                                {this.state.data.data?.face_name}
+                            </div>
+                            <div className="face_phone">
+                                {this.state.data.data?.face_phone}
+                            </div>
+                            <div>
+                            </div>
+                            <div className="total">
+                                <p>
+                                    Сумма закупки: {PositionStore.getBuyTotal().toFixed(2)}
+                                </p>
+                                <p>
+                                    Сумма продажи: {PositionStore.getSellTotal().toFixed(2)}
+                                </p>
+                                <p>
+                                    Маржа: {(PositionStore.getSellTotal().toFixed(2) - PositionStore.getBuyTotal()).toFixed(2)}
+                                </p>
+                            </div>
+                            <form onSubmit={(e)=>this._HandlerSubmit(e)}> 
+                            
+                            <div className="tenderlist">
+                                <div className="tenderpositions_item" >
+                                    <div className="tenderpositions_number">№</div>
+                                    <div className="tenderpositions_info">
+                                        <div className="tenderpositions_header head">
+                                            <div ></div>
+                                            <div className="tenderpositions_name">Наименование</div>
+                                            <div className="tenderpositions_amount">Кол-во</div>
+                                            <div className="tenderpositions_unit_name">Ед. изм</div>
+                                            <div className="tenderpositions_buy-summ">Цена</div>
+                                            <div className="tenderpositions_buy-summ">Сумма</div>
+                                            <input className="tenderpositions_buy-percent" placeholder="0" type="number" value={this.state.percent} onChange={this.handleChangeP}></input><span>%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {data.pos.map((item, index) => (
+                                    <Position item={item} index={index} rating={this.state.rating} percent={this.state.percent} tender_id={this.state.data.id}></Position>
+                                ))}
+                            </div>
+                        </form>
                         </div>
-                    </form>
+                        <div className="tenderoverview__sidebar">
+                            <Link to={`/documents/kp/${this.state.data.id}`}>
+                                <a>Сформировать КП</a>
+                            </Link>
+                        </div>
                     </div>
-                    
                 )
             }
             

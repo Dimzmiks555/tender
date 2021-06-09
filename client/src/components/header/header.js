@@ -18,6 +18,7 @@ export default class Header extends React.Component{
                         <NavLink to="/tendersearch" activeClassName="active">Поиск тендеров</NavLink>
                         <NavLink to="/mytenders" activeClassName="active">Мои тендеры</NavLink>
                         <NavLink to="/contragents" activeClassName="active">Поставщики</NavLink>
+                        <NavLink to="/documents" activeClassName="active">Документы</NavLink>
                     </div>
                 </div>
               );

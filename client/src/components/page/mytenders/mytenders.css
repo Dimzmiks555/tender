@@ -1,3 +1,18 @@
+.tenderoverview__mainblock {
+    width: 85%;
+}
+.tenderoverview {
+    display: flex;
+}
+.tenderoverview__sidebar {
+    padding: 40px 0 40px 40px;
+}
+.tenderoverview__sidebar button {
+    display: block;
+    width: 200px;
+    height: 40px;
+}
+
 .mytenders_button {
     border-radius: 20px;
     margin-left: auto;
@@ -34,6 +49,7 @@
     align-items: center;
 }
 .mytenders .tenderpositions_item{
+    background: #fff;
     border-bottom: 1px solid #ccc;
     align-items: stretch;
     display: flex;

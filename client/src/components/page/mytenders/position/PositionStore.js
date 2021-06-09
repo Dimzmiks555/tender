@@ -96,7 +96,7 @@ class PositionStore {
 
     completed(index) {
         if (this.props.tenderPos[index].start_price != 0 && this.props.tenderPos[index].analog_name != '') {
-            return 'blur(0.6px)'
+            return 'hue-rotate(180deg)'
         }
     }
 
