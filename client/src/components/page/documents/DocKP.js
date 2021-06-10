@@ -188,10 +188,10 @@ export default class DocKP extends React.Component{
                                             <td>{row.analog_name}</td> 
                                             <td>{row.edism}</td>
                                             <td>{row.amount}</td>
-                                            <td>{Number(row.price).toFixed(2)}</td>
+                                            <td>{Number(row.price).toFixed(2).replace(/\./g, ',')}</td>
                                             <td>30</td>
                                             <td></td>
-                                            <td>{(row.price * row.amount).toFixed(2)}</td>
+                                            <td>{(row.price * row.amount).toFixed(2).replace(/\./g, ',')}</td>
                                         </tr>
                                         </>
                                     )
@@ -203,10 +203,10 @@ export default class DocKP extends React.Component{
                                             <td>{row.analog_name}</td> 
                                             <td>{row.edism}</td>
                                             <td>{row.amount}</td>
-                                            <td>{Number(row.price).toFixed(2)}</td>
+                                            <td>{Number(row.price).toFixed(2).replace(/\./g, ',')}</td>
                                             <td>30</td>
                                             <td></td>
-                                            <td>{(row.price * row.amount).toFixed(2)}</td>
+                                            <td>{(row.price * row.amount).toFixed(2).replace(/\./g, ',')}</td>
                                         </tr>
                                     )
                                     : null
