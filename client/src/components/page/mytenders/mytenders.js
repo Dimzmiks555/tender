@@ -36,7 +36,11 @@ export default class MyTenders extends React.Component {
             }
           )
       }
+
       getData(){
+
+      
+
 
         function calcStage (title) {
           if (title?.includes('2-й этап')) {
@@ -90,7 +94,7 @@ export default class MyTenders extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="stage">
+                      <div className="stage" style={item.data?.title ? null : { background : "#555", boxShadow: "0 0 10px #555"}}>
                           {
                             calcStage(item.data?.title)
                           }
