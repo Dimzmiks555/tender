@@ -89,7 +89,7 @@ const Position = observer(
                             <input className="tenderpositions_name-end" placeholder="Введите комментарий к позиции..." value={PositionStore.props.tenderPos[index]?.analog_name} onChange={e => {PositionStore.handleComm(e, index, this.props.tender_id)}}></input>
                             <div className="tenderpositions_amount"></div>
                             <div className="tenderpositions_unit_name"></div>
-                            {PositionStore.handleSP((this.props.percent / 100 + 1) * this.buy_price?.value, index)}
+                            {PositionStore.handleSP((this.props.percent / 100 + 1) * Number(this.buy_price?.value), index, this.props.tender_id)}
                             <div className="tenderpositions_sell-price" ref={el => this.sell_price = el}>{NaN ? '0' : ((this.props.percent / 100 + 1) * this.buy_price?.value).toFixed(2)}</div>
                             <div className="tenderpositions_buy-summ" onChange={e => PositionStore.getSS(e.target.value, index)}>{(PositionStore.props.tenderPos[index]?.sell_price * Number(this.state.amount)).toFixed(2)}</div>
                         </div>

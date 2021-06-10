@@ -26,7 +26,6 @@ class PositionStore {
         let buySumm = 0
 
         for (var key in this.props.tenderPos) {
-                console.log(this.props.tenderPos[key].buy_summ)
                 buySumm += Number(this.props.tenderPos[key].buy_summ)
             }
         return buySumm
@@ -36,7 +35,6 @@ class PositionStore {
         let sell_summ = 0
 
         for (var key in this.props.tenderPos) {
-                console.log(this.props.tenderPos[key].sell_summ)
                 sell_summ += Number(this.props.tenderPos[key].sell_summ)
             }
         return sell_summ
@@ -53,7 +51,18 @@ class PositionStore {
         }
         this.props.tenderPos[index].sell_summ = e;
     }
-    handleSP(price,index){
+    handleSP(price, index, tender_id){
+        fetch(`http://127.0.0.1:5000/api/tenders/${tender_id}`, {
+            method: "PUT",
+            headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify({
+                index: index,
+                tender_id: tender_id,
+                sell_price: price.toString()
+            })
+        });
+
+
         if (!this.props.tenderPos[index]) {
             this.props.tenderPos[index] = {};
         }
@@ -72,11 +81,10 @@ class PositionStore {
         });
 
         this.props.tenderPos[index].analog_name = e.target.value;
-        console.log(e.target.value)
     }
     handleBP(e, index, tender_id) {
-
         let price = e.target.value.replace(/,/g, '.').replace(/ /g, "");
+
         fetch(`http://127.0.0.1:5000/api/tenders/${tender_id}`, {
             method: "PUT",
             headers: { "Accept": "application/json", "Content-Type": "application/json" },

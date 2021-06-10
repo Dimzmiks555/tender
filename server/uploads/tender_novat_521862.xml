@@ -1,0 +1,227 @@
+<tenderposition_import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://www.tender.pro/schema/tenderposition_import.xsd">
+<tenderpositions>
+<nds>0</nds>
+  <tenderposition>
+    <number>1</number>
+    <tpid>14121401</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>111.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Очиститетль пены</title>
+    <description>поставка в КЦ Липецкий район с.Ленино</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>2</number>
+    <tpid>14121402</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>24.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная лето, профессиональная, 750 мл (трубка-аппликатор) (SOUDAL)</title>
+    <description>поставка в Липецкий фл с.Ленино</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>3</number>
+    <tpid>14121403</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>664.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная пистолетная зима, профессиональная, 750 мл (SOUDAL)</title>
+    <description>поставка в Липецкий фл с.Ленино</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>4</number>
+    <tpid>14121406</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>325.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная пистолетная лето профессиональная 750 мл (SOUDAL)</title>
+    <description>поставка в Липецкий фл. с.Ленино</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>5</number>
+    <tpid>14121408</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>37.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пистолет для монтажной пены Fomeron Top </title>
+    <description>поставка в Липецкий фл.с.Ленино</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>6</number>
+    <tpid>14121411</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>60.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Очиститетль пены</title>
+    <description>поставка в фл Бройлер Инвест Белгородская лбл.</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>7</number>
+    <tpid>14121412</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>600.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная пистолетная лето профессиональная 750 мл (SOUDAL)</title>
+    <description>поставка в Бройлер Инвест, Белгородская обл, Красненский рн</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>8</number>
+    <tpid>14121413</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>6.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пистолет для монтажной пены Fomeron Top </title>
+    <description>поставка в Белгородскую обл, Красненский рн, фл Бройлер Инвест</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>9</number>
+    <tpid>14121423</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>34.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Очиститетль пены</title>
+    <description>поставка фл Ровеньки, Белгородская обл.</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>10</number>
+    <tpid>14121426</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>2.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная зима, профессиональная, 750 мл (трубка-аппликатор) (SOUDAL)</title>
+    <description>поставка фл Ровеньки, Белгородская обл</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>11</number>
+    <tpid>14121427</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>60.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная пистолетная зима, профессиональная, 750 мл (SOUDAL)</title>
+    <description>поставка фл Ровеньки, Белгородская обл</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>12</number>
+    <tpid>14121428</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>220.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пена монтажная пистолетная лето профессиональная 750 мл (SOUDAL)</title>
+    <description>поставка фл Ровеньки, Белгородская обл</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>13</number>
+    <tpid>14121429</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>10.000</amount>
+    <edismid>0</edismid>
+    <edism>шт</edism>
+    <title>Пистолет для монтажной пены Fomeron Top </title>
+    <description>поставка фл Ровеньки, Белгородская обл</description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+</tenderpositions>
+</tenderposition_import>

@@ -93,6 +93,19 @@ class TendersService {
                     }
                 }
             )
+        } else if (tender.sell_price != undefined) {
+            console.log(tender)
+            updatedTender = await Tenders.updateOne(
+                {
+                    id: tender.tender_id,
+                    "pos.number.0": (tender.index + 1).toString()
+                },
+                {
+                    $set: {
+                        "pos.$.price.0" : tender.sell_price
+                    }
+                }
+            )
         } else {
             return
         }

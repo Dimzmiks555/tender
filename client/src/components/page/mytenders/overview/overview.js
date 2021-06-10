@@ -46,7 +46,8 @@ const MyTenders_overview = observer(
                 }
             )
             
-            }
+        }
+        
         handleChangeP(e){
             this.setState({percent: e.target.value})
         }

@@ -1,0 +1,74 @@
+<tenderposition_import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://www.tender.pro/schema/tenderposition_import.xsd">
+<tenderpositions>
+<nds>0</nds>
+  <tenderposition>
+    <number>1</number>
+    <tpid>14112854</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>20.000</amount>
+    <edismid>0</edismid>
+    <edism>шт.</edism>
+    <title>AKL-A4 12x110 (М12) Анкер клиновой нержавеющий</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>2</number>
+    <tpid>14112855</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>20.000</amount>
+    <edismid>0</edismid>
+    <edism>шт.</edism>
+    <title>AKL-A4 10x100 (М10) Анкер клиновой нержавеющий</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>3</number>
+    <tpid>14112856</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>20.000</amount>
+    <edismid>0</edismid>
+    <edism>шт.</edism>
+    <title>AKL-A4 8x80 (М8) Анкер клиновой нержавеющий</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+  <tenderposition>
+    <number>4</number>
+    <tpid>14112857</tpid>
+    <nid>0</nid>
+    <maxprice></maxprice>
+    <goodprice></goodprice>
+    <analogid>0</analogid>
+    <amount>100.000</amount>
+    <edismid>0</edismid>
+    <edism>шт.</edism>
+    <title>Хомут червячный "Стандарт", диаметр 20х32 мм.</title>
+    <description></description>
+    <custom_field></custom_field>
+    <exfield1></exfield1>
+    <exfield2></exfield2>
+    <price></price>
+  </tenderposition>
+</tenderpositions>
+</tenderposition_import>

@@ -112,7 +112,9 @@ export default class MyTenders extends React.Component {
       await fetch('http://127.0.0.1:5000/api/upload', {
         method: 'POST',
         body: data
-      }).then()
+      }).then(res => {
+        window.location.reload();
+      })
       .catch(error => {
         console.log(error);
       })
