@@ -1,5 +1,5 @@
 @media print { /* Стиль для печати */
-    body, .document, .page, .wrapper, #root, .header{
+    body, .document, .page, .wrapper, #root, .header, .panel{
         visibility: hidden;
     }
     /* Блок который нужно отобразить */
@@ -99,4 +99,31 @@ table {
 }
 .total__string {
     margin-top: 30px;
+}
+.panel {
+    border-radius: 25px;
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    right: 40px;
+    top: 40px;
+    padding: 20px;
+}
+.panel button {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    height: 60px;
+    box-shadow: #c33 0px 0px 5px;
+    background: linear-gradient(-225deg, #A445B2 0%, #d41866 40%, #ff0022 100%);
+    color: #fefefe;
+}
+.panel button:hover {
+    background: #c33;
+    
 }

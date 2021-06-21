@@ -10,6 +10,8 @@ import TenderOverviewDocs from '../tenders/tenderoverviewdocs.js'
 import MyTenders_Overview from './mytenders/overview/overview.js'
 import Contragents from './contragents/contragents.js';
 import DocKP from './documents/DocKP.js';
+import MainDocs from './documents/MainDocs.js';
+import OutputDocuments from './documents/OutputDocuments.js';
  
 export default class Page extends React.Component{
     render(){
@@ -24,6 +26,8 @@ export default class Page extends React.Component{
                 <Route path="/mytenders_overview/:id/" component={MyTenders_Overview} />
                 <Route path="/contragents" component={Contragents} />
                 <Route path="/documents/kp/:id" component={DocKP} />
+                <Route path="/documents" component={MainDocs} />
+                <Route path="/output_docs" component={OutputDocuments} />
                 
             </Switch>
         </div>)

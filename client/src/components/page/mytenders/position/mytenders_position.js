@@ -29,7 +29,7 @@ const Position = observer(
             ('0' + t.getSeconds()).slice(-2);
             const params = {
                 method: 'POST',
-                body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid":4844352,"lang":"ru","params":{"id": ${this.props.tender_id},"companyid":343375,"ti": "${myT}"},"debug":{}}`,
+                body: `{"id":77,"jsonrpc":"2.0","method":"tender.offer.rating","sid": 6430876,"lang":"ru","params":{"id": ${this.props.tender_id},"companyid":343375,"ti": "${myT}"},"debug":{}}`,
                 headers: {
                     'Accept': 'application/json, text/javascript, */*; q=0.01',
                     'Content-Type': 'application/json'

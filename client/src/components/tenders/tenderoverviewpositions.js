@@ -104,10 +104,9 @@ export default class TenderOverviewPositions extends React.Component {
                     <div className="tenderpositions_number">{item.number}</div>
                     <div className="tenderpositions_info">
                         <div className="tenderpositions_header">
-                            <div className="tenderpositions_name">{item.name}</div>
-                            <div className="tenderpositions_amount">{item.amount}</div>
-                            <div className="tenderpositions_unit_name">{item.unit_name}</div>
-                            <div className="rating" style={{background: func(rating[index], 5)}} >{func(rating[index], 1)}</div>
+                            <div className="tenderpositions_name">{item?.name}</div>
+                            <div className="tenderpositions_amount">{item?.amount}</div>
+                            <div className="tenderpositions_unit_name">{item?.unit_name}</div>
                         </div>
                         <div className="tenderpositions_description">{item.description}</div>
                     </div>

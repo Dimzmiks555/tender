@@ -1,0 +1,28 @@
+h1 {
+    margin-bottom: 40px;
+}
+.mainDocs {
+    display: flex;
+    justify-content: space-between;
+}
+.mainDocs__item {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 60px;
+    width: 30%;
+    border-radius: 25px;
+    height: 300px;
+    border: 4px solid #c55;
+}
+.mainDocs__item:hover {
+    box-shadow: 0 0 20px #c55;
+}
+.mainDocs img {
+    margin-bottom: 10px;
+    height: 100px;
+} 
+.mainDocs p {
+    font-weight: bold;
+    font-size: 24px;
+}

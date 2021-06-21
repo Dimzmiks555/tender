@@ -139,6 +139,11 @@ export default class DocKP extends React.Component{
         let total = null;
         return (
             <div className="document">
+                <div className="panel">
+                    <button>
+                        Сохранить
+                    </button>
+                </div>
                 <div className="pagea4">
                     <div className="pagea4__header">
                         <img src={logo}></img>
@@ -147,7 +152,6 @@ export default class DocKP extends React.Component{
                             <p> ИП Аветикян Липарит Ашотович </p>
                             <p>ИНН 365233175954 , ОГРН 309365205600058</p>
                             <p>Юридический адрес: 397909, Воронежская область,</p>
-                            <p>Российская Федерация Воронежской область, Лискинский район, город Лиски</p>
                             <p>Лискинский район, г. Лиски, ул. Горная, д.59</p>		
                             <p>БИК 04200768, р/сч 40802810113000022883</p>	
                             <p>в Центрально-Черноземном банке ПАО Сбербанк г. Воронеж</p>	
@@ -156,7 +160,7 @@ export default class DocKP extends React.Component{
                         </div>
                     </div>
                     <div className="pagea4__title">
-                        <p>Исх. №34 от {date}</p>
+                        <p>Исх. №40 от {date}</p>
                         <div className="pagea4__gifter">
                             <p>Открытому акционерному обществу</p>
                             <p>"Группа Черкизово"</p>
@@ -222,7 +226,7 @@ export default class DocKP extends React.Component{
                     <footer>
                         
                         <div className="total__string">
-                            <b>Итого: {total?.toFixed(0) } {this.number_to_string(total?.toFixed(2))}.</b>
+                            <b>Итого: {Math.floor(total) } {this.number_to_string(total?.toFixed(2))}.</b>
                             <p><b>Без НДС.</b></p>
                         </div>
                         <div className="pagea4__footer">
