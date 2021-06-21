@@ -117,6 +117,7 @@ export default class MyTenders extends React.Component {
         method: 'POST',
         body: data
       }).then(res => {
+        alert('Номер успешно забронирован!')
         window.location.reload();
       })
       .catch(error => {
