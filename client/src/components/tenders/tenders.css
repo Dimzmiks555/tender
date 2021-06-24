@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.tenderlist_item .stage{
+.stage{
     border-radius: 25px;
     height: 50px;
     min-width: 50px;
@@ -26,36 +26,36 @@
     color:#fafafa;
     margin: 0 10px;
 }
-.tenderlist_item .info{
+.info{
     display: flex;
 }
-.tenderlist_item .title {
+.title {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
     margin-bottom: 10px;
 }
-.tenderlist_item .title a{
+.title a{
     display: block;
     color: #c33;    
 }
-.tenderlist_item .title a::first-letter{
+.title a::first-letter{
     text-transform: uppercase;
 }
-.tenderlist_item .title a:hover{
+.title a:hover{
     color: #e66;    
 }
-.tenderlist_item .close_date {
+.close_date {
     margin-right: 10px;
     padding: 0 10px;
 }
-.tenderlist_item .id {
+.id {
     margin-right: 10px;
 }
-.tenderlist_item .company_name {
+.company_name {
     text-align: right;
 }
-.tenderlist_item .type_name {
+.type_name {
     margin-right: 10px;
 }
 /* Tenderoverview */

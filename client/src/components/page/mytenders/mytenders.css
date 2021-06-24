@@ -17,12 +17,10 @@
 }
 .mytenders_button {
     border-radius: 20px;
-    margin-left: auto;
     width: 200px;
-    margin-top: 40px;
     padding: 20px 14px;
     display: block;
-    margin-right: 20px;
+    margin-left: 20px;
     font-weight: bold;
     color: #c33;
     box-shadow: #c33 0px 0px 10px;
@@ -163,12 +161,12 @@
     min-width: 40px;
 }
 .mytenders form {
+
 }
 .mytenders #input__file {
     display: none;
 }
 .mytenders #upload_button {
-    box-shadow: #c33 0px 0px 5px;
     background: transparent;
     color: #c33;
     padding: 20px 40px;
@@ -203,4 +201,17 @@
     display: flex;
     justify-content: space-between;
     font-size: 24px;
+}
+.tenderlist_item_closed {
+    filter:invert(7%);
+    box-shadow: #ccc 0px 10px 20px;
+    background: #fcfcfc;
+    padding: 20px 20px;
+    border-radius: 10px;
+    font-weight: medium;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

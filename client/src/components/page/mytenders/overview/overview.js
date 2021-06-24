@@ -88,6 +88,11 @@ const MyTenders_overview = observer(
                 return (
                     <div className="tenderoverview">
                         <div className="tenderoverview__mainblock">
+                            <Link to="/mytenders">
+                                <a className="mytenders_button">
+                                    Назад
+                                </a>
+                            </Link>
                             <div className="info" id="info">
                             <div className="title">
                                 {this.state.data?.data?.title}
@@ -146,7 +151,7 @@ const MyTenders_overview = observer(
                         </div>
                         <div className="tenderoverview__sidebar">
                             <Link to={`/documents/kp/${this.state.data.id}`}>
-                                <a onClick={this.handleClick(this.state.data.id)}>Сформировать КП</a>
+                                <a onClick={this.handleClick(this.state.data.id)} className="mytenders_button">Сформировать КП</a>
                             </Link>
                         </div>
                     </div>

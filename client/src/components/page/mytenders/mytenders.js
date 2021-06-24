@@ -73,8 +73,15 @@ export default class MyTenders extends React.Component {
             return (
               <div>
                 {
-                  data.map(item => (
-                    <div className="tenderlist_item" key={item.id}>
+                  data.map(item => {
+                    let nowDate = new Date();
+                    let arrDate = item.data?.close_date.split('.')
+                    let closeDate ;
+                    if (arrDate != undefined) {
+                      closeDate = new Date(arrDate[2], +arrDate[1] - 1, arrDate[0])
+                    }
+                    if (closeDate?.getTime() > nowDate.getTime()) {
+                      return <div className="tenderlist_item actual" key={item.id}> 
                       <div>
                         <div className="title">
                           {item.data?.title ? <Link to={`mytenders_overview/${item.id}`}><a>{item.data?.title}</a></Link> : <Link to={`mytenders_overview/${item.id}`}>Закрытый тендер</Link>}
@@ -100,7 +107,35 @@ export default class MyTenders extends React.Component {
                           }
                       </div>
                     </div>
-                  ))
+                    } else {
+                      return <div className="tenderlist_item_closed" key={item.id} > 
+                      <div>
+                        <div className="title">
+                          {item.data?.title ? <Link to={`mytenders_overview/${item.id}`}><a>{item.data?.title}</a></Link> : <Link to={`mytenders_overview/${item.id}`}>Закрытый тендер</Link>}
+                        </div>
+                        <div className="info">
+                          <div className="id">
+                            ID {item.id}
+                          </div>
+                          <div className="close_date">
+                            {item.data?.close_date}
+                          </div>
+                          <div className="type_name">
+                            {item.data?.type_name}
+                          </div>
+                          <div className="company_name">
+                            {item.data?.company_name}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="stage" style={item.data?.title ? null : { background : "#555", boxShadow: "0 0 10px #555"}}>
+                          {
+                            calcStage(item.data?.title)
+                          }
+                      </div>
+                    </div>
+                    }
+                })
                 }
               </div>
             )
